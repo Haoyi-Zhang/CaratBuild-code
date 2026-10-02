@@ -1,0 +1,422 @@
+{
+  "direct_test_functions": 66,
+  "errors": [],
+  "files": [
+    {
+      "classes": 0,
+      "file": "proofs/boundary_model_check.py",
+      "functions": 12,
+      "is_test": false,
+      "loc": 108,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/audit_artifact.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 82,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/build_task.py",
+      "functions": 2,
+      "is_test": false,
+      "loc": 81,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/capture_environment.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 16,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/check_all.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 41,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/claim_path_audit.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 24,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/client.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 20,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/code_quality_audit.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 34,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/collect_all.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 76,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/dependency_audit.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 24,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/extended_checks.py",
+      "functions": 2,
+      "is_test": false,
+      "loc": 49,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/node_server.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 19,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/reproduce.py",
+      "functions": 6,
+      "is_test": false,
+      "loc": 170,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/reproduce_all.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 136,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/reviewer_audit.py",
+      "functions": 2,
+      "is_test": false,
+      "loc": 118,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/robustness_audit.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 73,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/sanitize_outputs.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 26,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/serve.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 20,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "scripts/verify_public_inputs.py",
+      "functions": 1,
+      "is_test": false,
+      "loc": 16,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/__init__.py",
+      "functions": 0,
+      "is_test": false,
+      "loc": 5,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/baselines.py",
+      "functions": 6,
+      "is_test": false,
+      "loc": 68,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/boundaries.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 44,
+      "test_functions": 0
+    },
+    {
+      "classes": 1,
+      "file": "src/carat/closure.py",
+      "functions": 4,
+      "is_test": false,
+      "loc": 250,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/compaction.py",
+      "functions": 12,
+      "is_test": false,
+      "loc": 448,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/decode.py",
+      "functions": 8,
+      "is_test": false,
+      "loc": 290,
+      "test_functions": 0
+    },
+    {
+      "classes": 3,
+      "file": "src/carat/emulator.py",
+      "functions": 6,
+      "is_test": false,
+      "loc": 250,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/executable_build.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 132,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/experiments.py",
+      "functions": 12,
+      "is_test": false,
+      "loc": 596,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/extended_experiments.py",
+      "functions": 25,
+      "is_test": false,
+      "loc": 1185,
+      "test_functions": 0
+    },
+    {
+      "classes": 1,
+      "file": "src/carat/facts.py",
+      "functions": 20,
+      "is_test": false,
+      "loc": 414,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/generate.py",
+      "functions": 9,
+      "is_test": false,
+      "loc": 528,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/independent_check.py",
+      "functions": 11,
+      "is_test": false,
+      "loc": 500,
+      "test_functions": 0
+    },
+    {
+      "classes": 1,
+      "file": "src/carat/multiprocess_service.py",
+      "functions": 19,
+      "is_test": false,
+      "loc": 567,
+      "test_functions": 0
+    },
+    {
+      "classes": 1,
+      "file": "src/carat/paged.py",
+      "functions": 6,
+      "is_test": false,
+      "loc": 122,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/protocol.py",
+      "functions": 12,
+      "is_test": false,
+      "loc": 109,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/public_inputs.py",
+      "functions": 3,
+      "is_test": false,
+      "loc": 121,
+      "test_functions": 0
+    },
+    {
+      "classes": 0,
+      "file": "src/carat/public_pair.py",
+      "functions": 4,
+      "is_test": false,
+      "loc": 84,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/retention.py",
+      "functions": 9,
+      "is_test": false,
+      "loc": 186,
+      "test_functions": 0
+    },
+    {
+      "classes": 2,
+      "file": "src/carat/service.py",
+      "functions": 19,
+      "is_test": false,
+      "loc": 381,
+      "test_functions": 0
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_accounting.py",
+      "functions": 7,
+      "is_test": true,
+      "loc": 257,
+      "test_functions": 7
+    },
+    {
+      "classes": 3,
+      "file": "tests/test_boundaries.py",
+      "functions": 15,
+      "is_test": true,
+      "loc": 213,
+      "test_functions": 12
+    },
+    {
+      "classes": 0,
+      "file": "tests/test_boundary_model_check.py",
+      "functions": 4,
+      "is_test": true,
+      "loc": 22,
+      "test_functions": 3
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_closure.py",
+      "functions": 17,
+      "is_test": true,
+      "loc": 279,
+      "test_functions": 14
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_compaction.py",
+      "functions": 1,
+      "is_test": true,
+      "loc": 84,
+      "test_functions": 1
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_exhaustive.py",
+      "functions": 2,
+      "is_test": true,
+      "loc": 50,
+      "test_functions": 2
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_protocol.py",
+      "functions": 2,
+      "is_test": true,
+      "loc": 103,
+      "test_functions": 2
+    },
+    {
+      "classes": 0,
+      "file": "tests/test_public_input_provenance.py",
+      "functions": 5,
+      "is_test": true,
+      "loc": 38,
+      "test_functions": 4
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_public_pair.py",
+      "functions": 7,
+      "is_test": true,
+      "loc": 65,
+      "test_functions": 6
+    },
+    {
+      "classes": 1,
+      "file": "tests/test_retention.py",
+      "functions": 21,
+      "is_test": true,
+      "loc": 486,
+      "test_functions": 14
+    },
+    {
+      "classes": 0,
+      "file": "tests/test_reviewer_audit.py",
+      "functions": 2,
+      "is_test": true,
+      "loc": 14,
+      "test_functions": 1
+    }
+  ],
+  "network_or_install_commands_in_reproduce": [],
+  "python_files": 50,
+  "risky_dynamic_execution": [],
+  "schema_version": 1,
+  "source_loc": 7413,
+  "status": "PASS",
+  "syntax_errors": [],
+  "test_loc": 1611,
+  "unfinished_markers": [
+    {
+      "file": "scripts/code_quality_audit.py",
+      "kind": "marker",
+      "line": 20,
+      "text": "if re.search(r'\\b(?:TODO|FIXME|XXX)\\b',line,re.I): todos.append({'file':str(rel),'line':i,'kind':'marker','text':line.strip()[:200]})"
+    }
+  ]
+}

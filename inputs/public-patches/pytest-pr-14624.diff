@@ -1,0 +1,85 @@
+diff --git a/AUTHORS b/AUTHORS
+index 972f39aa45e..9094100cb4e 100644
+--- a/AUTHORS
++++ b/AUTHORS
+@@ -89,6 +89,7 @@ Charles Machalow
+ Charles-Meldhine Madi Mnemoi (cmnemoi)
+ Charnjit SiNGH (CCSJ)
+ Cheuk Ting Ho
++Chris Burr
+ Chris Mahoney
+ Chris Lamb
+ Chris NeJame
+diff --git a/changelog/14608.bugfix.rst b/changelog/14608.bugfix.rst
+new file mode 100644
+index 00000000000..178da2f662c
+--- /dev/null
++++ b/changelog/14608.bugfix.rst
+@@ -0,0 +1,2 @@
++Fixed a regression in pytest 9.1.0 where ``conftest.py`` files located in ``<invocation dir>/test*`` were no longer loaded as initial conftests when invoked without arguments.
++This could cause certain hooks (like :hook:`pytest_addoption`) in these files to not fire.
+diff --git a/src/_pytest/config/__init__.py b/src/_pytest/config/__init__.py
+index bc75c1e16fc..96b3dd6a86a 100644
+--- a/src/_pytest/config/__init__.py
++++ b/src/_pytest/config/__init__.py
+@@ -645,18 +645,18 @@ def _set_initial_conftests(
+             if i != -1:
+                 path = path[:i]
+             anchor = absolutepath(invocation_dir / path)
+-
+             # Ensure we do not break if what appears to be an anchor
+             # is in fact a very long option (#10169, #11394).
+-            if safe_exists(anchor):
+-                anchors.append(anchor)
+-                # Let's also consider test* subdirs.
+-                if anchor.is_dir():
+-                    for x in anchor.glob("test*"):
+-                        if x.is_dir():
+-                            anchors.append(x)
++            if not safe_exists(anchor):
++                continue
++
++            anchors.append(anchor)
++            # Let's also consider test* subdirs.
++            if anchor.is_dir():
++                anchors.extend(x for x in anchor.glob("test*") if x.is_dir())
+         if not anchors:
+-            anchors = [invocation_dir]
++            anchors.append(invocation_dir)
++            anchors.extend(x for x in invocation_dir.glob("test*") if x.is_dir())
+ 
+         for anchor in anchors:
+             self._loadconftestmodules(
+diff --git a/testing/test_conftest.py b/testing/test_conftest.py
+index 60bcbbf1d41..23a0db81c39 100644
+--- a/testing/test_conftest.py
++++ b/testing/test_conftest.py
+@@ -440,6 +440,28 @@ def pytest_addoption(parser):
+     result.stdout.fnmatch_lines(["*--xyz*"])
+ 
+ 
++def test_conftests_in_invocation_dir_tests_is_initial(pytester: Pytester) -> None:
++    """An option registered in a conftest under ``test*`` subdir of the
++    invocation dir is loaded as initial when no command-line arguments
++    or `testpaths` are given (#14608).
++    """
++    pytester.makepyfile(
++        **{
++            "tests/conftest.py": """
++                def pytest_addoption(parser):
++                    parser.addoption("--db-url")
++            """,
++            "test_it.py": """
++                def test_it(request):
++                    assert request.config.getoption("--db-url") == "scheme://host/db"
++            """,
++        }
++    )
++    result = pytester.runpytest("--db-url", "scheme://host/db")
++    assert result.ret == ExitCode.OK
++    result.assert_outcomes(passed=1)
++
++
+ def test_conftest_import_order(pytester: Pytester, monkeypatch: MonkeyPatch) -> None:
+     ct1 = pytester.makeconftest("")
+     sub = pytester.mkdir("sub")

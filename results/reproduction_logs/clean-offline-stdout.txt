@@ -1,0 +1,139 @@
+{
+  "documented_commands_completed": true,
+  "scientific_completion": true,
+  "completion_scope": "bounded fixed-roster crash-stop last-fact characterization and executable instance",
+  "venue_submission_ready": false,
+  "tests": {
+    "tests_run": 66,
+    "failures": 0,
+    "errors": 0,
+    "successful": true
+  },
+  "resources": {
+    "measured_stage_cpu_seconds": 54.271255,
+    "largest_worker_rss_mib": 150.121,
+    "scope": "post-import stage CPU; high-water mark of largest worker, not concurrent aggregate",
+    "inherited_cumulative_cpu_seconds": null
+  },
+  "nonclaims": [
+    "Byzantine omission requires an external witness or stronger trust mechanism",
+    "dynamic membership and multi-host performance are outside the fixed-roster localhost model",
+    "the executable adapter does not run the upstream pytest build"
+  ]
+}
+{
+  "centralized_union_used": false,
+  "claim_rows": 25,
+  "external_resource_rows": 71,
+  "manuscript_reference_audit": "not part of standalone code artifact",
+  "pairwise_exchange_rounds": 3,
+  "passed": true,
+  "scope": "artifact-local semantic, provenance, ledger, and packaging-surface audit",
+  "tests_run": 66
+}
+[reproduce] independent boundary model check
+[reproduce] dependency and environment records
+[reproduce] offline reviewer audit
+sanitized 0 text files
+verified retained pytest pair and public patch snapshots
+{"files_scanned": 50, "potential_third_party_imports": ["carat"]}
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "cross-input parser and artifact-pipeline robustness; not production-workload representativeness",
+  "public_patch_count": 3,
+  "patches": [
+    {
+      "file": "pytest-pr-14624.diff",
+      "sha256": "e17f605094aa99ae000a447087c879d2f092a09c387b2784803d6cd103a69802",
+      "baseline": {
+        "files": 4,
+        "hunks": 4,
+        "added_lines": 34,
+        "deleted_lines": 9
+      },
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ]
+    },
+    {
+      "file": "pytest-pr-14901.diff",
+      "sha256": "460435e684177b2a9b885423fd09f89e473f64cf00c39f6541f031012519047d",
+      "baseline": {
+        "files": 3,
+        "hunks": 4,
+        "added_lines": 39,
+        "deleted_lines": 1
+      },
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ]
+    },
+    {
+      "file": "pytest-pr-14968.diff",
+      "sha256": "c5476a2abf5b8447717f7be9aa80e164d39f9806b8e130f58528d1414996973c",
+      "baseline": {
+        "files": 3,
+        "hunks": 3,
+        "added_lines": 45,
+        "deleted_lines": 0
+      },
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ]
+    }
+  ],
+  "exact_fixture_coupling": [],
+  "errors": []
+}
+{
+  "status": "PASS",
+  "errors": [],
+  "python_files": 50,
+  "source_loc": 7413,
+  "test_loc": 1611,
+  "direct_test_functions": 66
+}
+{
+  "status": "PASS",
+  "reference_count": 130,
+  "missing_count": 0
+}
+{"source_files_hashed": 78, "python": "3.13.5"}
+{
+  "errors": [],
+  "failures": [],
+  "file_count": 156,
+  "ok": true,
+  "parsed_results": {
+    "csv": 30,
+    "json": 38
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "warnings": []
+}

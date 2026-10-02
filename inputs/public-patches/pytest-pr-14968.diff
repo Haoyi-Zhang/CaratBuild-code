@@ -1,0 +1,71 @@
+diff --git a/changelog/14635.bugfix.rst b/changelog/14635.bugfix.rst
+new file mode 100644
+index 00000000000..bb349f6875f
+--- /dev/null
++++ b/changelog/14635.bugfix.rst
+@@ -0,0 +1 @@
++Fixed fixture resolution failures when specifying multiple test paths on the command line that share common parent directories. Parametrized fixtures defined in a ``conftest.py`` could be silently dropped depending on the order of the specified paths.
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index c4df4e46983..1b337e20c7e 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -893,6 +893,30 @@ def _collect_one_node(
+             return rep, True
+         else:
+             rep = collect_one_node(node)
++            if rep.passed and node in self._collection_cache:
++                # Re-collection (handle_dupes=False) creates fresh child nodes.
++                # Reuse previously-seen Directory children so that fixture
++                # registration (keyed by node identity) remains valid. (#14635)
++                prev_result = self._collection_cache[node].result
++                prev_dirs = {
++                    child.path: child
++                    for child in prev_result
++                    if isinstance(child, nodes.Directory)
++                }
++                if prev_dirs:
++                    rep.result = [
++                        prev_dirs.get(child.path, child)
++                        if isinstance(child, nodes.Directory)
++                        else child
++                        for child in rep.result
++                    ]
+             self._collection_cache[node] = rep
+             return rep, False
+ 
+diff --git a/testing/test_conftest.py b/testing/test_conftest.py
+index 23a0db81c39..38363a3ba1c 100644
+--- a/testing/test_conftest.py
++++ b/testing/test_conftest.py
+@@ -911,6 +911,34 @@ def test_uses_ancestor(ancestor_fixture):
+     result.stdout.fnmatch_lines(["*test_uses_ancestor*PASSED*", "*1 passed*"])
+ 
+ 
++def test_fixture_closure_order_independence_with_parametrize(pytester: Pytester) -> None:
++    """Fixture closure must not depend on unrelated earlier collection (#14635)."""
++    root = pytester.path
++    tests = root / "tests"
++    tests.mkdir()
++    components = tests / "components"
++    components.mkdir()
++    components.joinpath("conftest.py").write_text(
++        "import pytest\n@pytest.fixture\ndef cache_dir_side_effect(): return None\n"
++        "@pytest.fixture\ndef mock_init_cache_dir(cache_dir_side_effect): return cache_dir_side_effect\n",
++        encoding="utf-8",
++    )
++    unrelated = components / "unrelated"
++    unrelated.mkdir()
++    unrelated.joinpath("test_unrelated.py").write_text("def test_unrelated(): pass\n", encoding="utf-8")
++    target = components / "target"
++    target.mkdir()
++    target.joinpath("test_target.py").write_text(
++        "import pytest\n@pytest.mark.parametrize('cache_dir_side_effect', ['x'])\n"
++        "def test_target(mock_init_cache_dir): assert mock_init_cache_dir == 'x'\n",
++        encoding="utf-8",
++    )
++    result = pytester.runpytest("--collect-only", str(unrelated), str(target / "test_target.py"))
++    result.stdout.fnmatch_lines(["*test_target*"])
++    assert result.ret == ExitCode.OK
++
++
+ def test_required_option_help(pytester: Pytester) -> None:

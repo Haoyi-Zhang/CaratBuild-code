@@ -1,0 +1,13 @@
+scenario,task,dependencies,outcome,return_code,elapsed_ms
+declared-backport,prepare,,pass,0,767.613
+declared-backport,verify,prepare,pass,0,767.86
+declared-backport,package,verify,pass,0,780.321
+declared-backport,test,package,pass,0,767.721
+changed-payload,prepare,,fail,4,769.124
+changed-payload,verify,prepare,skip,,0.0
+changed-payload,package,verify,skip,,0.0
+changed-payload,test,package,skip,,0.0
+corrupted-package,prepare,,pass,0,767.366
+corrupted-package,verify,prepare,pass,0,767.927
+corrupted-package,package,verify,pass,0,717.914
+corrupted-package,test,package,fail,3,768.007

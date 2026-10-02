@@ -1,0 +1,16 @@
+{
+  "fork_multi_output_runs": 96,
+  "maximum_carat_ratio": 1.0,
+  "maximum_copies": 16,
+  "maximum_count_ratio": 17.0,
+  "maximum_presentation_mass_ratio": 17.0,
+  "measurement": {
+    "cpu_seconds": 1.371185,
+    "elapsed_seconds": 1.371165,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 93.672,
+    "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+  },
+  "runs": 720,
+  "squash_multi_input_runs": 120
+}

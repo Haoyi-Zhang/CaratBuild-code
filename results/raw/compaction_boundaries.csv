@@ -1,0 +1,9 @@
+case,expected_determined,observed_determined,diagnostic_mass
+valid-projection,True,True,5
+replay-mint,False,False,5
+replay-presentation,False,False,0
+replay-transform,False,False,0
+replay-effect,False,False,0
+duplicate-summary,False,False,0
+overlapping-unit-summaries,False,False,0
+live-unit-reuse,False,False,5

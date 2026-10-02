@@ -1,0 +1,6 @@
+fault,runs,converged,mass_error_max,rounds_median,rounds_p95,fact_bytes_median,summary_bytes_median,branch_spread_runs
+clean,32,32,0,5.0,5.0,117900.0,6416.0,28
+partition,32,32,0,17.0,17.0,117900.0,20172.0,28
+delay-reorder,32,32,0,25.0,25.0,343534.5,85894.0,29
+duplicate-loss,32,32,0,25.0,25.0,351939.0,115345.5,27
+combined,32,32,0,29.0,30.0,346927.5,68262.5,29

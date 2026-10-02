@@ -1,0 +1,5 @@
+case,admitted,gross_mass,meaning
+relation-cycle,True,5,acyclic history is not an implemented constraint
+opaque-dependency,True,5,"dependency is a label, not verified build causality"
+new-mint-identity,True,10,distinct valid mints count separately
+trusted-summary-edit,True,50,coherently rewritten imported summary and replay index remain structurally trusted

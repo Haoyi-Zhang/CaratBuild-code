@@ -1,0 +1,10 @@
+{
+  "error": "semantic-boundary expectation changed",
+  "interpretation": "The exact replay index correctly rejected an internally inconsistent one-field summary edit. The retained non-claim was repaired to use a coherent rewrite of both imported replay evidence and aggregates, which remains accepted because imported summaries are not authenticated in the stated crash-stop model.",
+  "returncode": 1,
+  "schema_version": 1,
+  "stage": "semantic-boundaries",
+  "status": "REPAIR_FAILURE_PRESERVED",
+  "stderr": "results/reproduction_failures/repair-semantic-boundary.stderr.txt",
+  "stdout": "results/reproduction_failures/repair-semantic-boundary.stdout.txt"
+}

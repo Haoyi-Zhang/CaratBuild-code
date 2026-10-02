@@ -1,0 +1,37 @@
+{
+  "acquisition": "read-only GitHub records retained verbatim for offline review",
+  "files": [
+    {
+      "bytes": 2254,
+      "file": "pr-14018.diff",
+      "sha256": "cbc31796ff4f0939bb18acb48bdb53ea11376da7bb8e5b969ffe7a6eb2442c91",
+      "source_url": "https://github.com/pytest-dev/pytest/pull/14018.diff"
+    },
+    {
+      "bytes": 2254,
+      "file": "pr-14074.diff",
+      "sha256": "5baaeb7fd4bb445f1e278c2c70ab30fd8938f9da180461aadd775ed47f1e6a03",
+      "source_url": "https://github.com/pytest-dev/pytest/pull/14074.diff"
+    },
+    {
+      "bytes": 1091,
+      "file": "LICENSE.pytest",
+      "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+      "source_url": "https://github.com/pytest-dev/pytest/blob/main/LICENSE"
+    }
+  ],
+  "repository": "pytest-dev/pytest",
+  "retrieved_utc": "2026-09-25",
+  "schema_version": 1,
+  "selection": {
+    "excluded_path": "AUTHORS",
+    "pair_file": "../../../external_inputs/pytest_pair.json",
+    "selected_paths": [
+      "changelog/13634.bugfix.rst",
+      "src/_pytest/config/__init__.py",
+      "testing/test_config.py"
+    ],
+    "source_pr": 14018,
+    "target_pr": 14074
+  }
+}

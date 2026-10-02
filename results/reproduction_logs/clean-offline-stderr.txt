@@ -1,0 +1,22 @@
+running tests
+running manipulation
+running faults
+running ambiguity
+running scale
+running compaction
+running exhaustive
+running original collector
+running identity
+running transport
+running service-pilot
+running service
+running recovery
+running compaction-boundaries
+running public-pair
+running semantic-boundaries
+running sealed-windows
+running multiprocess-retention
+running completion-boundaries
+running executable-build
+running complete collector
+running artifact audit

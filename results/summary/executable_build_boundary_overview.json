@@ -1,0 +1,19 @@
+{
+  "accounting_mass": 15,
+  "checker_accepted": true,
+  "effect_facts": 12,
+  "fail_records": 2,
+  "measurement": {
+    "cpu_seconds": 10.455578,
+    "elapsed_seconds": 6.880766,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 96.664,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "pass_records": 7,
+  "scenarios": 3,
+  "scope": "actual local subprocess DAG over the licensed diff adapter; not an upstream pytest build or a general dependency-causality proof",
+  "skip_records": 3,
+  "task_processes": 9,
+  "task_records": 12
+}

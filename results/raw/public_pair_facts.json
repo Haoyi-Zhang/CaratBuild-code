@@ -1,0 +1,84 @@
+[
+  {
+    "event": "n0:1",
+    "kind": "mint",
+    "unit": "public-unit-1",
+    "mass": 5,
+    "source": "n0",
+    "batch": "public-pair"
+  },
+  {
+    "event": "n0:2",
+    "kind": "mint",
+    "unit": "public-unit-2",
+    "mass": 6,
+    "source": "n0",
+    "batch": "public-pair"
+  },
+  {
+    "event": "n0:3",
+    "kind": "mint",
+    "unit": "public-unit-3",
+    "mass": 4,
+    "source": "n0",
+    "batch": "public-pair"
+  },
+  {
+    "event": "n0:4",
+    "kind": "presentation",
+    "presentation": "public-source",
+    "atoms": [
+      [
+        "public-unit-1",
+        1
+      ],
+      [
+        "public-unit-2",
+        1
+      ],
+      [
+        "public-unit-3",
+        1
+      ]
+    ],
+    "branch": "source",
+    "generation": 0,
+    "batch": "public-pair"
+  },
+  {
+    "event": "n1:1",
+    "kind": "presentation",
+    "presentation": "public-target",
+    "atoms": [
+      [
+        "public-unit-1",
+        1
+      ],
+      [
+        "public-unit-2",
+        1
+      ],
+      [
+        "public-unit-3",
+        1
+      ]
+    ],
+    "branch": "target",
+    "generation": 1,
+    "batch": "public-pair"
+  },
+  {
+    "event": "n1:2",
+    "kind": "transform",
+    "transform": "public-relation",
+    "operation": "cherry_pick",
+    "inputs": [
+      "public-source"
+    ],
+    "outputs": [
+      "public-target"
+    ],
+    "fresh": [],
+    "batch": "public-pair"
+  }
+]

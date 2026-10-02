@@ -1,0 +1,4 @@
+family,cases,failures,starved_facts
+delivery-orders,960,0,0
+operation-sequences,39,0,0
+permanent-prefix-hole-counterexample,1,0,6

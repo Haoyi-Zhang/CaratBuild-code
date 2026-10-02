@@ -1,0 +1,476 @@
+{
+  "boundary_campaigns": {
+    "compaction_boundaries": {
+      "cases": 8,
+      "matched_expected_decisions": 8,
+      "measurement": {
+        "cpu_seconds": 0.00588,
+        "elapsed_seconds": 0.005843,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.543,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "naive_summary_plus_replayed_full_batch_mass": 10,
+      "original_full_batch_mass": 5,
+      "scope": "trusted offline projections with boundary guards; not a replicated compaction protocol",
+      "valid_projection_mass": 5
+    },
+    "completion_boundaries": {
+      "ablation_conditions": 6,
+      "ablation_counterexamples": 6,
+      "byte_identical_observation_mass": 10,
+      "byzantine_omission_worlds": 2,
+      "certificate_support_facts": 10,
+      "fixed_length_information_lower_bound_bits": 5,
+      "hidden_fact_mass": 5,
+      "identity_indistinguishability_worlds": 2,
+      "identity_oracle_masses": [
+        5,
+        10
+      ],
+      "measurement": {
+        "cpu_seconds": 0.008503,
+        "elapsed_seconds": 0.008526,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.539,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "origin_completion_vectors_at_five_origins": 32,
+      "payload_observations_identical": true,
+      "scope": "support-irredundance for this interval representation and an observer-only Byzantine omission impossibility; not universal encoding optimality",
+      "single_support_removals_checked": 10,
+      "single_support_removals_refused": 10
+    },
+    "executable_build": {
+      "accounting_mass": 15,
+      "checker_accepted": true,
+      "effect_facts": 12,
+      "fail_records": 2,
+      "measurement": {
+        "cpu_seconds": 10.455578,
+        "elapsed_seconds": 6.880766,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.664,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "pass_records": 7,
+      "scenarios": 3,
+      "scope": "actual local subprocess DAG over the licensed diff adapter; not an upstream pytest build or a general dependency-causality proof",
+      "skip_records": 3,
+      "task_processes": 9,
+      "task_records": 12
+    },
+    "identity": {
+      "carat_integrity_refusals": 400,
+      "interpretation": "Unique-mint counting supplies the same mass on this corpus; the decoder adds integrity decisions, not a stronger mass estimator.",
+      "invalid_cases": 400,
+      "measurement": {
+        "cpu_seconds": 1.727807,
+        "elapsed_seconds": 1.731628,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.793,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "mint_only_exact_mass_cases": 1120,
+      "valid_cases": 720
+    },
+    "multiprocess_retention": {
+      "all_enumerated_sets_have_raw_survivor": true,
+      "bytes_on_projected_endpoints_after": 14674,
+      "centralized_union_used": false,
+      "certified_holders": 3,
+      "closed_raw_conflict_refused": true,
+      "closed_raw_replay_idempotent": true,
+      "converged_exact_union": true,
+      "duplicate_fact_occurrences": 3690,
+      "endpoint_restart_before_heal": true,
+      "enumerated_crash_sets_within_bound": 16,
+      "exchange_application_bytes": 1226943,
+      "exchange_pages": 298,
+      "expected_mass": 600,
+      "fault_bound": 2,
+      "forwarded_fact_occurrences": 4510,
+      "independent_logs": 5,
+      "maximum_exchange_page_facts": 16,
+      "measurement": {
+        "cpu_seconds": 9.716574,
+        "elapsed_seconds": 6.200099,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 97.047,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "new_fact_insertions": 820,
+      "pairwise_exchange_rounds": 3,
+      "partitioned_exchange_rounds": 2,
+      "post_convergence_oracle_inventory_reads": 5,
+      "processes": 5,
+      "projected_endpoints": 2,
+      "projected_restart_preserved_mass": 600,
+      "projection_reduction_fraction": 0.662511,
+      "raw_bytes_on_projected_endpoints_before": 43480,
+      "raw_facts_per_endpoint": 205,
+      "scope": "five independent localhost processes; crash-stop fixed membership; f+1 raw retention, not Byzantine attestation or multi-host performance",
+      "surviving_holder_exported_facts": 205,
+      "surviving_holder_restart_preserved_pin": true,
+      "two_raw_holders_terminated": true,
+      "under_threshold_refused": true
+    },
+    "public_pair": {
+      "adapter_cases": 9,
+      "matched_expected_admission": 9,
+      "measurement": {
+        "cpu_seconds": 0.036602,
+        "elapsed_seconds": 0.036588,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.547,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "normalized_facts": 6,
+      "scope": "generic bounded three-file declared-pair adapter evaluated on one packaged pytest fix/backport pair; no upstream tests or builds executed",
+      "selected_added_lines_per_input": 15,
+      "selected_files_per_input": 3,
+      "selected_hunks": 6,
+      "service": {
+        "application_frame_bytes": 27154,
+        "checker_accepted_nodes": 5,
+        "converged_nodes": 5,
+        "delayed_responses": 0,
+        "determined_nodes": 5,
+        "elapsed_ms": 31.815,
+        "expected_facts": 6,
+        "failed_pulls": 0,
+        "fault_profile": "clean",
+        "fixture": "public-pair",
+        "gross_mass": 15,
+        "logical_restarts": 0,
+        "maximum_frame_bytes": 1109,
+        "maximum_page_facts": 6,
+        "new_fact_insertions": 24,
+        "partial_responses": 0,
+        "pull_attempts": 20,
+        "received_fact_occurrences": 70,
+        "request_drops": 0,
+        "response_drops": 0,
+        "rounds": 1,
+        "stopped_endpoint_attempts": 0,
+        "successful_pulls": 20
+      },
+      "source_inputs": 2,
+      "unit_mass": 15
+    },
+    "recovery": {
+      "acknowledged_fact_occurrences": 46,
+      "acknowledged_sets_preserved": true,
+      "converged_nodes": 5,
+      "fault_scope": "one whole process killed after acknowledged ingress; filesystem power loss not tested",
+      "killed_process_exit_code": -9,
+      "measurement": {
+        "cpu_seconds": 2.325116,
+        "elapsed_seconds": 1.458862,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.672,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "nodes": 5,
+      "reconciliation_rounds": 3,
+      "runs": 1,
+      "union_facts": 46
+    },
+    "sealed_windows": {
+      "admissible_future_subsets": 32,
+      "complete_world_final": true,
+      "completed_phase_final_nodes": 5,
+      "delayed_world_final": false,
+      "enumerated_arrival_subsets": 32,
+      "final_mass": 15,
+      "final_subsets": 1,
+      "future_phase_final_nodes": 5,
+      "future_subsets_preserving_finality": 32,
+      "global_identifier_reuse_refused": true,
+      "illegal_phase_final_nodes": 0,
+      "measurement": {
+        "cpu_seconds": 0.19704,
+        "elapsed_seconds": 0.197216,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.664,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "open_phase_final_nodes": 0,
+      "ordinary_data_mass_in_both_worlds": 10,
+      "restart_phase_final_nodes": 5,
+      "retained_seal_anchors": 5,
+      "scope": "five loopback endpoints, fixed honest-origin roster, self-contained batch, and local sealed projection; no authentication, Byzantine origin, or distributed surviving-copy/reclamation claim",
+      "sealed_projection_determined": true,
+      "sealed_projection_mass": 15,
+      "sealed_projection_summaries": 1,
+      "service_observations": 25,
+      "service_phases": 5,
+      "two_world_cases": 2
+    },
+    "semantic_boundaries": {
+      "cases": 4,
+      "expected_admissions": 4,
+      "interpretation": "these accepted counterexamples delimit non-claims; they are not successful defenses",
+      "measurement": {
+        "cpu_seconds": 0.002919,
+        "elapsed_seconds": 0.002906,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.539,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "rows": [
+        {
+          "admitted": true,
+          "case": "relation-cycle",
+          "gross_mass": 5,
+          "meaning": "acyclic history is not an implemented constraint"
+        },
+        {
+          "admitted": true,
+          "case": "opaque-dependency",
+          "gross_mass": 5,
+          "meaning": "dependency is a label, not verified build causality"
+        },
+        {
+          "admitted": true,
+          "case": "new-mint-identity",
+          "gross_mass": 10,
+          "meaning": "distinct valid mints count separately"
+        },
+        {
+          "admitted": true,
+          "case": "trusted-summary-edit",
+          "gross_mass": 50,
+          "meaning": "coherently rewritten imported summary and replay index remain structurally trusted"
+        }
+      ]
+    },
+    "service": {
+      "accepted_runs": 6,
+      "all_exact_union": true,
+      "common_refusal_runs": 6,
+      "logical_restarts": 4,
+      "maximum_frame_bytes": 21143,
+      "maximum_page_facts": 16,
+      "maximum_rounds": 7,
+      "measurement": {
+        "cpu_seconds": 1.812106,
+        "elapsed_seconds": 1.824684,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.918,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "runs": 12,
+      "total_elapsed_ms": 1782.65
+    },
+    "service_pilot": {
+      "accepted_runs": 1,
+      "all_exact_union": true,
+      "common_refusal_runs": 0,
+      "logical_restarts": 0,
+      "maximum_frame_bytes": 20744,
+      "maximum_page_facts": 16,
+      "maximum_rounds": 3,
+      "measurement": {
+        "cpu_seconds": 0.151589,
+        "elapsed_seconds": 0.151842,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.797,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      },
+      "runs": 1,
+      "total_elapsed_ms": 148.057
+    },
+    "transport": {
+      "boundary_rows": [
+        {
+          "delivered_fact_occurrences": 70,
+          "expected_facts": 141,
+          "fixture": "prefix-complete",
+          "left_missing": 0,
+          "page_payload_bytes": "",
+          "right_missing": 0,
+          "rounds": 5,
+          "same_integrity_decision": true,
+          "transport": "coordinate-gaps"
+        },
+        {
+          "delivered_fact_occurrences": 282,
+          "expected_facts": 141,
+          "fixture": "prefix-complete",
+          "left_missing": 0,
+          "page_payload_bytes": 31808,
+          "right_missing": 0,
+          "rounds": 9,
+          "same_integrity_decision": true,
+          "transport": "full-fact-pages"
+        },
+        {
+          "delivered_fact_occurrences": 0,
+          "expected_facts": 77,
+          "fixture": "permanent-holes",
+          "left_missing": 0,
+          "page_payload_bytes": "",
+          "right_missing": 6,
+          "rounds": 16,
+          "same_integrity_decision": true,
+          "transport": "coordinate-gaps"
+        },
+        {
+          "delivered_fact_occurrences": 64,
+          "expected_facts": 77,
+          "fixture": "permanent-holes",
+          "left_missing": 0,
+          "page_payload_bytes": 7286,
+          "right_missing": 0,
+          "rounds": 2,
+          "same_integrity_decision": true,
+          "transport": "full-fact-pages"
+        },
+        {
+          "delivered_fact_occurrences": 0,
+          "expected_facts": 2,
+          "fixture": "split-coordinate",
+          "left_missing": 1,
+          "page_payload_bytes": "",
+          "right_missing": 1,
+          "rounds": 16,
+          "same_integrity_decision": true,
+          "transport": "coordinate-gaps"
+        },
+        {
+          "delivered_fact_occurrences": 3,
+          "expected_facts": 2,
+          "fixture": "split-coordinate",
+          "left_missing": 0,
+          "page_payload_bytes": 441,
+          "right_missing": 0,
+          "rounds": 1,
+          "same_integrity_decision": true,
+          "transport": "full-fact-pages"
+        }
+      ],
+      "enumerated_cases": 324,
+      "enumerated_converged": 324,
+      "maximum_enumeration_rounds": 5,
+      "measurement": {
+        "cpu_seconds": 0.192404,
+        "elapsed_seconds": 0.192396,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 96.789,
+        "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+      }
+    }
+  },
+  "completion_scope": "bounded fixed-roster crash-stop last-fact characterization and executable instance",
+  "documented_commands_completed": true,
+  "nonclaims": [
+    "Byzantine omission requires an external witness or stronger trust mechanism",
+    "dynamic membership and multi-host performance are outside the fixed-roster localhost model",
+    "the executable adapter does not run the upstream pytest build"
+  ],
+  "original_campaigns": {
+    "ambiguity": {
+      "detected": 400,
+      "maximum_witness_size": 3,
+      "measurement": {
+        "cpu_seconds": 1.22033,
+        "elapsed_seconds": 1.22032,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 93.418,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      },
+      "runs": 400,
+      "verified": 400
+    },
+    "compaction": {
+      "all_accounting_equal": true,
+      "largest_batches": 80,
+      "largest_facts": 3025,
+      "largest_reduction_fraction": 0.692665,
+      "measurement": {
+        "cpu_seconds": 1.98249,
+        "elapsed_seconds": 1.982464,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 103.039,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      }
+    },
+    "elapsed_seconds": 34.025,
+    "exhaustive": {
+      "delivery_cases": 960,
+      "delivery_failures": 0,
+      "gap_hole_counterexamples": 1,
+      "gap_hole_starved_facts": 6,
+      "measurement": {
+        "cpu_seconds": 1.557639,
+        "elapsed_seconds": 1.557586,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 93.293,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      },
+      "operation_failures": 0,
+      "operation_sequences": 39
+    },
+    "faults": {
+      "arrival_order_branch_divergent_runs": 141,
+      "checker_accepted": 160,
+      "converged": 160,
+      "determined": 160,
+      "maximum_mass_error": 0,
+      "measurement": {
+        "cpu_seconds": 8.864001,
+        "elapsed_seconds": 8.864048,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 93.793,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      },
+      "runs": 160
+    },
+    "manipulation": {
+      "fork_multi_output_runs": 96,
+      "maximum_carat_ratio": 1.0,
+      "maximum_copies": 16,
+      "maximum_count_ratio": 17.0,
+      "maximum_presentation_mass_ratio": 17.0,
+      "measurement": {
+        "cpu_seconds": 1.371185,
+        "elapsed_seconds": 1.371165,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 93.672,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      },
+      "runs": 720,
+      "squash_multi_input_runs": 120
+    },
+    "scale": {
+      "largest_checker_ms_median": 639.271,
+      "largest_decode_ms_median": 661.686,
+      "largest_facts": 20013,
+      "largest_state_bytes": 2972060,
+      "largest_units": 20000,
+      "measurement": {
+        "cpu_seconds": 9.021526,
+        "elapsed_seconds": 9.021248,
+        "inherited_cumulative_cpu_seconds": null,
+        "peak_worker_rss_mib": 150.121,
+        "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+      },
+      "peak_rss_kib": 153724
+    }
+  },
+  "resources": {
+    "inherited_cumulative_cpu_seconds": null,
+    "largest_worker_rss_mib": 150.121,
+    "measured_stage_cpu_seconds": 54.271255,
+    "scope": "post-import stage CPU; high-water mark of largest worker, not concurrent aggregate"
+  },
+  "scientific_completion": true,
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "successful": true,
+    "tests_run": 66
+  },
+  "venue_submission_ready": false
+}

@@ -1,0 +1,22 @@
+{
+  "bulk_projected_bytes": 154644,
+  "bulk_raw_bytes": 503178,
+  "bulk_reduction_fraction": 0.692665,
+  "checker_median_ms": 639.27133,
+  "decode_median_ms": 661.686009,
+  "historical_fail_status_preserved": true,
+  "historical_trial_count": 3,
+  "largest_worker_rss_mib": 150.121,
+  "module_level_tests_run": 8,
+  "retention_projected_bytes": 14674,
+  "retention_raw_bytes": 43480,
+  "retention_reduction_fraction": 0.662511,
+  "returncode": 0,
+  "scale_facts": 20013,
+  "scale_state_bytes": 2972060,
+  "scale_units": 20000,
+  "scope": "bounded fixed-roster crash-stop last-fact characterization and executable instance",
+  "stage_cpu_seconds": 54.271255,
+  "tests_run": 66,
+  "wall_seconds": 74
+}

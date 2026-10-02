@@ -1,0 +1,166 @@
+[
+  {
+    "sample": "click-pathlike-edit",
+    "repository": "pallets/click",
+    "repository_url": "https://github.com/pallets/click",
+    "observed_date": "2026-08-19",
+    "title": "Accept path-like values in the editor helper",
+    "license": "BSD-3-Clause",
+    "files_changed": 5,
+    "added_lines": 47,
+    "removed_lines": 11,
+    "change_shapes": [
+      {
+        "path": "src/click/_termui_impl.py",
+        "description": "The editor helper broadens its accepted filename type from strings to path-like objects."
+      },
+      {
+        "path": "src/click/termui.py",
+        "description": "The public editor entry point recognizes a single path-like object and wraps it as a one-item iterable."
+      },
+      {
+        "path": "tests/test_termui.py",
+        "description": "A regression test covers both a single path-like filename and an iterable containing one."
+      }
+    ]
+  },
+  {
+    "sample": "pytest-conftest-blocking",
+    "repository": "pytest-dev/pytest",
+    "repository_url": "https://github.com/pytest-dev/pytest",
+    "observed_date": "2025-12-29",
+    "title": "Report a usage error when a conftest file is blocked as a plugin",
+    "license": "MIT",
+    "files_changed": 4,
+    "added_lines": 16,
+    "removed_lines": 0,
+    "change_shapes": [
+      {
+        "path": "changelog/13634.bugfix.rst",
+        "description": "The change log records an explicit usage error for attempts to block a conftest file as a plugin."
+      },
+      {
+        "path": "src/_pytest/config/__init__.py",
+        "description": "Plugin-argument handling rejects conftest-file names with a user-facing error."
+      },
+      {
+        "path": "testing/test_config.py",
+        "description": "A regression test checks the usage-error exit path and diagnostic."
+      }
+    ]
+  },
+  {
+    "sample": "requests-pytest-compatibility",
+    "repository": "psf/requests",
+    "repository_url": "https://github.com/psf/requests",
+    "observed_date": "2024-04-11",
+    "title": "Restore test compatibility with the current warning API",
+    "license": "Apache-2.0",
+    "files_changed": 2,
+    "added_lines": 2,
+    "removed_lines": 2,
+    "change_shapes": [
+      {
+        "path": "requirements-dev.txt",
+        "description": "The development test constraint is widened to admit the current supported testing-framework major line."
+      },
+      {
+        "path": "tests/test_requests.py",
+        "description": "A warning assertion adopts the current no-argument API form."
+      }
+    ]
+  },
+  {
+    "sample": "httpx-client-certificate-path",
+    "repository": "encode/httpx",
+    "repository_url": "https://github.com/encode/httpx",
+    "observed_date": "2024-12-04",
+    "title": "Continue client-certificate setup when peer verification is disabled",
+    "license": "BSD-3-Clause",
+    "files_changed": 2,
+    "added_lines": 7,
+    "removed_lines": 4,
+    "change_shapes": [
+      {
+        "path": "CHANGELOG.md",
+        "description": "The change log records the client-certificate case when peer verification is disabled."
+      },
+      {
+        "path": "httpx/_config.py",
+        "description": "The disabled-verification branch configures the context but no longer returns before client-certificate setup."
+      }
+    ]
+  },
+  {
+    "sample": "django-reverse-test-sequence",
+    "repository": "django/django",
+    "repository_url": "https://github.com/django/django",
+    "observed_date": "2025-08-21",
+    "title": "Avoid a primary-key collision when a test group runs in reverse",
+    "license": "BSD-3-Clause",
+    "files_changed": 1,
+    "added_lines": 1,
+    "removed_lines": 1,
+    "change_shapes": [
+      {
+        "path": "tests/bulk_create/tests.py",
+        "description": "A fixed primary-key value in a bulk-create regression is moved away from values that a database sequence may already have allocated."
+      }
+    ]
+  },
+  {
+    "sample": "fastapi-metadata-typo",
+    "repository": "fastapi/fastapi",
+    "repository_url": "https://github.com/fastapi/fastapi",
+    "observed_date": "2025-12-06",
+    "title": "Fix a metadata spelling error in the documentation hook",
+    "license": "MIT",
+    "files_changed": 1,
+    "added_lines": 1,
+    "removed_lines": 1,
+    "change_shapes": [
+      {
+        "path": "scripts/mkdocs_hooks.py",
+        "description": "A documentation-hook comment corrects the spelling of metadata."
+      }
+    ]
+  },
+  {
+    "sample": "serde-json-buffered-reader",
+    "repository": "serde-rs/json",
+    "repository_url": "https://github.com/serde-rs/json",
+    "observed_date": "2025-01-28",
+    "title": "Keep the buffered reader in the caller",
+    "license": "MIT OR Apache-2.0",
+    "files_changed": 1,
+    "added_lines": 5,
+    "removed_lines": 5,
+    "change_shapes": [
+      {
+        "path": "src/de.rs",
+        "description": "A documentation example keeps the buffered reader in the caller so unread bytes remain available after one decoded object."
+      }
+    ]
+  },
+  {
+    "sample": "ripgrep-json-statistics",
+    "repository": "BurntSushi/ripgrep",
+    "repository_url": "https://github.com/BurntSushi/ripgrep",
+    "observed_date": "2025-10-16",
+    "title": "Account for search statistics before suppressing empty JSON output",
+    "license": "MIT OR Unlicense",
+    "files_changed": 2,
+    "added_lines": 5,
+    "removed_lines": 4,
+    "change_shapes": [
+      {
+        "path": "CHANGELOG.md",
+        "description": "The change log records corrected summary statistics for JSON output."
+      },
+      {
+        "path": "crates/printer/src/json.rs",
+        "description": "Search statistics are accumulated before the early return that suppresses an empty JSON end record."
+      }
+    ]
+  }
+]

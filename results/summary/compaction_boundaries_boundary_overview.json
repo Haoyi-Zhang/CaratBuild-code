@@ -1,0 +1,15 @@
+{
+  "cases": 8,
+  "matched_expected_decisions": 8,
+  "measurement": {
+    "cpu_seconds": 0.00588,
+    "elapsed_seconds": 0.005843,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 96.543,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "naive_summary_plus_replayed_full_batch_mass": 10,
+  "original_full_batch_mass": 5,
+  "scope": "trusted offline projections with boundary guards; not a replicated compaction protocol",
+  "valid_projection_mass": 5
+}

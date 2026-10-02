@@ -1,0 +1,32 @@
+{
+  "license_bytes": 1091,
+  "license_file": "PYTEST-LICENSE",
+  "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+  "license_source_url": "https://github.com/pytest-dev/pytest/blob/main/LICENSE",
+  "patches": [
+    {
+      "bytes": 3277,
+      "file": "pytest-pr-14624.diff",
+      "provenance": "Retained verbatim from the public GitHub pull-request .diff endpoint.",
+      "sha256": "e17f605094aa99ae000a447087c879d2f092a09c387b2784803d6cd103a69802",
+      "source_url": "https://github.com/pytest-dev/pytest/pull/14624.diff"
+    },
+    {
+      "bytes": 2988,
+      "file": "pytest-pr-14901.diff",
+      "provenance": "Retained verbatim from the public GitHub pull-request .diff endpoint.",
+      "sha256": "460435e684177b2a9b885423fd09f89e473f64cf00c39f6541f031012519047d",
+      "source_url": "https://github.com/pytest-dev/pytest/pull/14901.diff"
+    },
+    {
+      "bytes": 3290,
+      "file": "pytest-pr-14968.diff",
+      "provenance": "Retained verbatim from the public GitHub pull-request .diff endpoint.",
+      "sha256": "c5476a2abf5b8447717f7be9aa80e164d39f9806b8e130f58528d1414996973c",
+      "source_url": "https://github.com/pytest-dev/pytest/pull/14968.diff"
+    }
+  ],
+  "repository": "pytest-dev/pytest",
+  "retrieved_utc": "2026-09-21",
+  "schema_version": 2
+}

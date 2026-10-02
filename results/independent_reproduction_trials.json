@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "semantic_digests_equal": false,
+  "status": "FAIL",
+  "trials": [
+    {
+      "child_cpu_seconds": 9.544716,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "1",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "5d171d756b244e72d5f7d50b5edc6e5785a0f9aab7a1b8e1355b09e7c468e184",
+      "trial": 1,
+      "wall_seconds": 8.264626152999995
+    },
+    {
+      "child_cpu_seconds": 7.688716000000001,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "42",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "705f5f03af3f6194ace0a0681525be62402f7bcb8b940a2e5bacfc7b1b579088",
+      "trial": 2,
+      "wall_seconds": 6.496084329000041
+    },
+    {
+      "child_cpu_seconds": 15.523364,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "8675309",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "66b98cb11aaa0e7939915f9d607ecae6343a8503a20f1478766d82d6e0f4456b",
+      "trial": 3,
+      "wall_seconds": 14.143297850999943
+    }
+  ]
+}

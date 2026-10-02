@@ -1,0 +1,7 @@
+fixture,transport,rounds,expected_facts,left_missing,right_missing,delivered_fact_occurrences,page_payload_bytes,same_integrity_decision
+prefix-complete,coordinate-gaps,5,141,0,0,70,,True
+prefix-complete,full-fact-pages,9,141,0,0,282,31808,True
+permanent-holes,coordinate-gaps,16,77,0,6,0,,True
+permanent-holes,full-fact-pages,2,77,0,0,64,7286,True
+split-coordinate,coordinate-gaps,16,2,1,1,0,,True
+split-coordinate,full-fact-pages,1,2,0,0,3,441,True

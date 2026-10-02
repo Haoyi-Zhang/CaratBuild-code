@@ -1,0 +1,797 @@
+{
+  "files_scanned": [
+    "README.md",
+    "claim_evidence_ledger.csv",
+    "inputs/public/README.md",
+    "inputs/public-patches/README.md",
+    "proofs/claims.md",
+    "results/README.md",
+    "results/claim_evidence_audit.json"
+  ],
+  "missing": [],
+  "reference_count": 130,
+  "references": [
+    {
+      "exists": true,
+      "line": 8,
+      "path": "scripts/reproduce.sh",
+      "source": "README.md"
+    },
+    {
+      "exists": true,
+      "line": 2,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 2,
+      "path": "proofs/boundary_model_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 2,
+      "path": "tests/test_boundary_model_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 2,
+      "path": "results/raw/identity_indistinguishability.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 2,
+      "path": "results/boundary_model_check.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 3,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 3,
+      "path": "src/carat/closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 3,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 3,
+      "path": "results/raw/sealed_window_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 3,
+      "path": "results/raw/completion_boundary_matrix.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 4,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 4,
+      "path": "src/carat/retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 4,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 4,
+      "path": "results/raw/retention_crash_enumeration.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 4,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "src/carat/closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "src/carat/independent_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "results/raw/sealed_window_enumeration.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 5,
+      "path": "results/raw/sealed_window_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 6,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 6,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 6,
+      "path": "results/raw/sealed_window_future_extensions.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "src/carat/paged.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "results/raw/page_enumeration.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "results/raw/service_campaign.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 7,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "src/carat/boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "tests/test_protocol.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "results/raw/transport_boundaries.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 8,
+      "path": "results/raw/exhaustive.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 9,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 9,
+      "path": "src/carat/baselines.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 9,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 9,
+      "path": "results/raw/identity_baseline.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 9,
+      "path": "results/raw/manipulation.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 10,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 10,
+      "path": "src/carat/decode.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 10,
+      "path": "tests/test_accounting.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 10,
+      "path": "results/raw/identity_baseline.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 10,
+      "path": "results/raw/ambiguity.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 11,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 11,
+      "path": "src/carat/experiments.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 11,
+      "path": "tests/test_accounting.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 11,
+      "path": "results/raw/manipulation.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 12,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 12,
+      "path": "src/carat/independent_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 12,
+      "path": "tests/test_accounting.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 12,
+      "path": "results/raw/ambiguity.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 12,
+      "path": "results/summary/ambiguity_summary.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 13,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 13,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 13,
+      "path": "results/raw/completion_support_ablation.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 13,
+      "path": "results/raw/completion_boundary_matrix.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 14,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 14,
+      "path": "scripts/extended_checks.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 14,
+      "path": "results/raw/completion_boundary_matrix.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 15,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 15,
+      "path": "src/carat/multiprocess_service.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 15,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 15,
+      "path": "results/raw/multiprocess_retention.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 15,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 16,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 16,
+      "path": "src/carat/multiprocess_service.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 16,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 16,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "src/carat/compaction.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "tests/test_compaction.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "results/raw/compaction.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "results/raw/compaction_boundaries.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 17,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 18,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 18,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 18,
+      "path": "src/carat/multiprocess_service.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 18,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 18,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 19,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 19,
+      "path": "src/carat/service.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 19,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 19,
+      "path": "results/raw/process_recovery.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "src/carat/public_pair.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "src/carat/public_inputs.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "tests/test_public_pair.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "tests/test_public_input_provenance.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "scripts/verify_public_inputs.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "results/raw/public_pair_adapter.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 20,
+      "path": "results/raw/public_pair_facts.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 21,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 21,
+      "path": "src/carat/executable_build.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 21,
+      "path": "scripts/extended_checks.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 21,
+      "path": "results/raw/executable_build.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 21,
+      "path": "results/raw/executable_build_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "src/carat/paged.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "src/carat/multiprocess_service.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "tests/test_retention.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "results/raw/transport_boundaries.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 22,
+      "path": "results/raw/multiprocess_retention_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 23,
+      "path": "src/carat/public_inputs.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 23,
+      "path": "scripts/verify_public_inputs.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 23,
+      "path": "tests/test_public_input_provenance.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 23,
+      "path": "inputs/public/pytest/PROVENANCE.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 24,
+      "path": "scripts/check_all.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 24,
+      "path": "tests/test_boundary_model_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 24,
+      "path": "tests/test_public_input_provenance.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 24,
+      "path": "tests/test_reviewer_audit.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 24,
+      "path": "results/summary/unit_tests.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 25,
+      "path": "src/carat/facts.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 25,
+      "path": "src/carat/closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 25,
+      "path": "src/carat/independent_check.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 25,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 25,
+      "path": "results/raw/sealed_window_summary.json",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 26,
+      "path": "proofs/claims.md",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 26,
+      "path": "tests/test_boundaries.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 26,
+      "path": "tests/test_closure.py",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 26,
+      "path": "results/raw/semantic_boundaries.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 26,
+      "path": "results/raw/completion_boundary_matrix.csv",
+      "source": "claim_evidence_ledger.csv"
+    },
+    {
+      "exists": true,
+      "line": 31,
+      "path": "results/raw/identity_indistinguishability.csv",
+      "source": "proofs/claims.md"
+    },
+    {
+      "exists": true,
+      "line": 49,
+      "path": "results/raw/identity_baseline.csv",
+      "source": "proofs/claims.md"
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}

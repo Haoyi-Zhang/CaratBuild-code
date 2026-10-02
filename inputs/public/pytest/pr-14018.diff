@@ -1,0 +1,55 @@
+diff --git a/AUTHORS b/AUTHORS
+index bf34f79c374..7d9ffb3b759 100644
+--- a/AUTHORS
++++ b/AUTHORS
+@@ -312,6 +312,7 @@ Michael Goerz
+ Michael Krebs
+ Michael Seifert
+ Michael Vogt
++Michael Reznik
+ Michal Wajszczuk
+ Michał Górny
+ Michał Zięba
+diff --git a/changelog/13634.bugfix.rst b/changelog/13634.bugfix.rst
+new file mode 100644
+index 00000000000..ee12aeafc3a
+--- /dev/null
++++ b/changelog/13634.bugfix.rst
+@@ -0,0 +1,5 @@
++Blocking a ``conftest.py`` file using the ``-p no:`` option is now explicitly disallowed.
++
++Previously this resulted in an internal assertion failure during plugin loading.
++
++Pytest now raises a clear ``UsageError`` explaining that conftest files are not plugins and cannot be disabled via ``-p``.
+diff --git a/src/_pytest/config/__init__.py b/src/_pytest/config/__init__.py
+index 51c99acd8e6..21dc35219d8 100644
+--- a/src/_pytest/config/__init__.py
++++ b/src/_pytest/config/__init__.py
+@@ -816,6 +816,12 @@ def consider_pluginarg(self, arg: str) -> None:
+             if name in essential_plugins:
+                 raise UsageError(f"plugin {name} cannot be disabled")
+ 
++            if name.endswith("conftest.py"):
++                raise UsageError(
++                    f"Blocking conftest files using -p is not supported: -p no:{name}\n"
++                    "conftest.py files are not plugins and cannot be disabled via -p.\n"
++                )
++
+             # PR #4304: remove stepwise if cacheprovider is blocked.
+             if name == "cacheprovider":
+                 self.set_blocked("stepwise")
+diff --git a/testing/test_config.py b/testing/test_config.py
+index 44ac0ca2aa7..de11e3fa13a 100644
+--- a/testing/test_config.py
++++ b/testing/test_config.py
+@@ -2475,6 +2475,10 @@ def test_config_does_not_load_blocked_plugin_from_args(pytester: Pytester) -> No
+     result.stderr.fnmatch_lines(["*: error: unrecognized arguments: -s"])
+     assert result.ret == ExitCode.USAGE_ERROR
+ 
++    result = pytester.runpytest(str(p), "-p no:/path/to/conftest.py", "-s")
++    result.stderr.fnmatch_lines(["ERROR:*Blocking conftest files*"])
++    assert result.ret == ExitCode.USAGE_ERROR
++
+ 
+ def test_invocation_args(pytester: Pytester) -> None:
+     """Ensure that Config.invocation_* arguments are correctly defined"""

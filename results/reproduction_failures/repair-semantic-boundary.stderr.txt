@@ -1,0 +1,47 @@
+running tests
+running manipulation
+running faults
+running ambiguity
+running scale
+running compaction
+running exhaustive
+running original collector
+running identity
+running transport
+running service-pilot
+running service
+running recovery
+running compaction-boundaries
+running public-pair
+running semantic-boundaries
+{
+  "completed": false,
+  "error": "semantic-boundary expectation changed",
+  "error_type": "AssertionError",
+  "measurement": {
+    "cpu_seconds": 0.002695,
+    "elapsed_seconds": 0.002682,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 96.547,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  }
+}
+
+Traceback (most recent call last):
+  File "<artifact>/scripts/reproduce_all.py", line 158, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "<artifact>/scripts/reproduce_all.py", line 154, in main
+    return _run_locked()
+  File "<artifact>/scripts/reproduce_all.py", line 121, in _run_locked
+    run_checked(
+    ~~~~~~~~~~~^
+        [sys.executable, str(ROOT / "scripts/extended_checks.py"), "--stage", stage],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stage,
+        ^^^^^^
+    )
+    ^
+  File "<artifact>/scripts/reproduce_all.py", line 79, in run_checked
+    raise subprocess.CalledProcessError(completed.returncode, arguments)
+subprocess.CalledProcessError: Command '['/opt/pyvenv/bin/python', '<artifact>/scripts/extended_checks.py', '--stage', 'semantic-boundaries']' returned non-zero exit status 1.

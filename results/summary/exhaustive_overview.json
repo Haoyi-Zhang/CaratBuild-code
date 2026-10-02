@@ -1,0 +1,15 @@
+{
+  "delivery_cases": 960,
+  "delivery_failures": 0,
+  "gap_hole_counterexamples": 1,
+  "gap_hole_starved_facts": 6,
+  "measurement": {
+    "cpu_seconds": 1.557639,
+    "elapsed_seconds": 1.557586,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 93.293,
+    "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+  },
+  "operation_failures": 0,
+  "operation_sequences": 39
+}

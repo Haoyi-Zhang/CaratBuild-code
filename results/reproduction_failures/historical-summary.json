@@ -1,0 +1,48 @@
+{
+  "diagnosis": {
+    "failure": "the shipped checkpoint final artifact audit cannot start because results/summary/complete_overview.json is absent",
+    "method": "reran the shipped checkpoint artifact-audit script against the shipped checkpoint tree; the original three runs did not preserve per-run stdout/stderr or stage",
+    "reproduced_returncode": 1,
+    "reproduced_stage": "artifact audit startup",
+    "stderr": "results/reproduction_failures/checkpoint-artifact-audit.stderr.txt",
+    "stdout": "results/reproduction_failures/checkpoint-artifact-audit.stdout.txt"
+  },
+  "historical_semantic_digests_equal": false,
+  "historical_status": "FAIL",
+  "historical_trials": [
+    {
+      "child_cpu_seconds": 9.544716,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "1",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "5d171d756b244e72d5f7d50b5edc6e5785a0f9aab7a1b8e1355b09e7c468e184",
+      "trial": 1,
+      "wall_seconds": 8.264626152999995
+    },
+    {
+      "child_cpu_seconds": 7.688716000000001,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "42",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "705f5f03af3f6194ace0a0681525be62402f7bcb8b940a2e5bacfc7b1b579088",
+      "trial": 2,
+      "wall_seconds": 6.496084329000041
+    },
+    {
+      "child_cpu_seconds": 15.523364,
+      "maxrss_raw": 100516,
+      "python_hash_seed": "8675309",
+      "result_file_count": 46,
+      "returncode": 1,
+      "semantic_digest": "66b98cb11aaa0e7939915f9d607ecae6343a8503a20f1478766d82d6e0f4456b",
+      "trial": 3,
+      "wall_seconds": 14.143297850999943
+    }
+  ],
+  "interpretation": "The three inherited returncode=1 records remain unchanged. The retained diagnosis is a newly reproduced checkpoint failure, not a retroactive assertion that all three historical runs had identical stderr or reached the same stage.",
+  "schema_version": 1,
+  "source": "results/independent_reproduction_trials.json from the delivered checkpoint",
+  "status": "HISTORICAL_FAIL_PRESERVED"
+}

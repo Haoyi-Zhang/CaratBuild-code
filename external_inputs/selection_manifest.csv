@@ -1,0 +1,5 @@
+input,source,selection,consumed_representation,scientific_role,limit
+public_history_slices.json,supplied fixed eight-entry profile file,all eight entries unchanged,counts and paraphrases,deterministic size constants,not reconstructed upstream history
+pytest_pair.json,https://github.com/pytest-dev/pytest/pull/14018/files,three non-contributor-list file hunks,exact selected unified-diff hunks,source fix,one linked pair; no build execution
+pytest_pair.json,https://github.com/pytest-dev/pytest/pull/14074/files,three non-contributor-list file hunks,exact selected unified-diff hunks,explicit backport,one linked pair; no build execution
+pytest-LICENSE.txt,https://raw.githubusercontent.com/pytest-dev/pytest/main/LICENSE,complete license text,MIT notice,lawful redistribution,license read on 2026-09-10

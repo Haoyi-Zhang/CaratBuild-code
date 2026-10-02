@@ -1,0 +1,35 @@
+{
+  "relation": "explicit-backport",
+  "repository": "pytest-dev/pytest",
+  "access_date": "2026-09-10",
+  "source_record": "https://github.com/pytest-dev/pytest/pull/14018",
+  "target_record": "https://github.com/pytest-dev/pytest/pull/14074",
+  "source": [
+    {
+      "path": "changelog/13634.bugfix.rst",
+      "hunk": "@@ -0,0 +1,5 @@\n+Blocking a ``conftest.py`` file using the ``-p no:`` option is now explicitly disallowed.\n+\n+Previously this resulted in an internal assertion failure during plugin loading.\n+\n+Pytest now raises a clear ``UsageError`` explaining that conftest files are not plugins and cannot be disabled via ``-p``.\n"
+    },
+    {
+      "path": "src/_pytest/config/__init__.py",
+      "hunk": "@@ -816,6 +816,12 @@ def consider_pluginarg(self, arg: str) -> None:\n             if name in essential_plugins:\n                 raise UsageError(f\"plugin {name} cannot be disabled\")\n \n+            if name.endswith(\"conftest.py\"):\n+                raise UsageError(\n+                    f\"Blocking conftest files using -p is not supported: -p no:{name}\\n\"\n+                    \"conftest.py files are not plugins and cannot be disabled via -p.\\n\"\n+                )\n+\n             # PR #4304: remove stepwise if cacheprovider is blocked.\n             if name == \"cacheprovider\":\n                 self.set_blocked(\"stepwise\")\n"
+    },
+    {
+      "path": "testing/test_config.py",
+      "hunk": "@@ -2475,6 +2475,10 @@ def test_config_does_not_load_blocked_plugin_from_args(pytester: Pytester) -> No\n     result.stderr.fnmatch_lines([\"*: error: unrecognized arguments: -s\"])\n     assert result.ret == ExitCode.USAGE_ERROR\n \n+    result = pytester.runpytest(str(p), \"-p no:/path/to/conftest.py\", \"-s\")\n+    result.stderr.fnmatch_lines([\"ERROR:*Blocking conftest files*\"])\n+    assert result.ret == ExitCode.USAGE_ERROR\n+\n \n def test_invocation_args(pytester: Pytester) -> None:\n     \"\"\"Ensure that Config.invocation_* arguments are correctly defined\"\"\"\n"
+    }
+  ],
+  "target": [
+    {
+      "path": "changelog/13634.bugfix.rst",
+      "hunk": "@@ -0,0 +1,5 @@\n+Blocking a ``conftest.py`` file using the ``-p no:`` option is now explicitly disallowed.\n+\n+Previously this resulted in an internal assertion failure during plugin loading.\n+\n+Pytest now raises a clear ``UsageError`` explaining that conftest files are not plugins and cannot be disabled via ``-p``.\n"
+    },
+    {
+      "path": "src/_pytest/config/__init__.py",
+      "hunk": "@@ -814,6 +814,12 @@ def consider_pluginarg(self, arg: str) -> None:\n             if name in essential_plugins:\n                 raise UsageError(f\"plugin {name} cannot be disabled\")\n \n+            if name.endswith(\"conftest.py\"):\n+                raise UsageError(\n+                    f\"Blocking conftest files using -p is not supported: -p no:{name}\\n\"\n+                    \"conftest.py files are not plugins and cannot be disabled via -p.\\n\"\n+                )\n+\n             # PR #4304: remove stepwise if cacheprovider is blocked.\n             if name == \"cacheprovider\":\n                 self.set_blocked(\"stepwise\")\n"
+    },
+    {
+      "path": "testing/test_config.py",
+      "hunk": "@@ -2460,6 +2460,10 @@ def test_config_does_not_load_blocked_plugin_from_args(pytester: Pytester) -> No\n     result.stderr.fnmatch_lines([\"*: error: unrecognized arguments: -s\"])\n     assert result.ret == ExitCode.USAGE_ERROR\n \n+    result = pytester.runpytest(str(p), \"-p no:/path/to/conftest.py\", \"-s\")\n+    result.stderr.fnmatch_lines([\"ERROR:*Blocking conftest files*\"])\n+    assert result.ret == ExitCode.USAGE_ERROR\n+\n \n def test_invocation_args(pytester: Pytester) -> None:\n     \"\"\"Ensure that Config.invocation_* arguments are correctly defined\"\"\"\n"
+    }
+  ]
+}

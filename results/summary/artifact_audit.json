@@ -1,0 +1,10 @@
+{
+  "centralized_union_used": false,
+  "claim_rows": 25,
+  "external_resource_rows": 71,
+  "manuscript_reference_audit": "not part of standalone code artifact",
+  "pairwise_exchange_rounds": 3,
+  "passed": true,
+  "scope": "artifact-local semantic, provenance, ledger, and packaging-surface audit",
+  "tests_run": 66
+}

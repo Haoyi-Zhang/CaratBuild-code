@@ -1,0 +1,73 @@
+{
+  "errors": [],
+  "exact_fixture_coupling": [],
+  "patches": [
+    {
+      "baseline": {
+        "added_lines": 34,
+        "deleted_lines": 9,
+        "files": 4,
+        "hunks": 4
+      },
+      "file": "pytest-pr-14624.diff",
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ],
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "sha256": "e17f605094aa99ae000a447087c879d2f092a09c387b2784803d6cd103a69802"
+    },
+    {
+      "baseline": {
+        "added_lines": 39,
+        "deleted_lines": 1,
+        "files": 3,
+        "hunks": 4
+      },
+      "file": "pytest-pr-14901.diff",
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ],
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "sha256": "460435e684177b2a9b885423fd09f89e473f64cf00c39f6541f031012519047d"
+    },
+    {
+      "baseline": {
+        "added_lines": 45,
+        "deleted_lines": 0,
+        "files": 3,
+        "hunks": 3
+      },
+      "file": "pytest-pr-14968.diff",
+      "malformed_variants_rejected": [
+        "missing_hunks",
+        "missing_new_path",
+        "not_a_diff"
+      ],
+      "metamorphic_variants": [
+        "crlf",
+        "file_order_reversed",
+        "lf",
+        "terminal_newline_removed"
+      ],
+      "sha256": "c5476a2abf5b8447717f7be9aa80e164d39f9806b8e130f58528d1414996973c"
+    }
+  ],
+  "public_patch_count": 3,
+  "schema_version": 1,
+  "scope": "cross-input parser and artifact-pipeline robustness; not production-workload representativeness",
+  "status": "PASS"
+}

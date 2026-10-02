@@ -1,0 +1,212 @@
+{
+  "exact_membership_state_lower_bound": {
+    "fixed_cardinality": [
+      {
+        "minimum_state_bits": 1,
+        "possible_seen_sets": 2,
+        "seen": 1,
+        "universe": 2
+      },
+      {
+        "minimum_state_bits": 3,
+        "possible_seen_sets": 6,
+        "seen": 2,
+        "universe": 4
+      },
+      {
+        "minimum_state_bits": 5,
+        "possible_seen_sets": 20,
+        "seen": 3,
+        "universe": 6
+      },
+      {
+        "minimum_state_bits": 7,
+        "possible_seen_sets": 70,
+        "seen": 4,
+        "universe": 8
+      },
+      {
+        "minimum_state_bits": 8,
+        "possible_seen_sets": 252,
+        "seen": 5,
+        "universe": 10
+      },
+      {
+        "minimum_state_bits": 10,
+        "possible_seen_sets": 924,
+        "seen": 6,
+        "universe": 12
+      },
+      {
+        "minimum_state_bits": 12,
+        "possible_seen_sets": 3432,
+        "seen": 7,
+        "universe": 14
+      },
+      {
+        "minimum_state_bits": 14,
+        "possible_seen_sets": 12870,
+        "seen": 8,
+        "universe": 16
+      },
+      {
+        "minimum_state_bits": 16,
+        "possible_seen_sets": 48620,
+        "seen": 9,
+        "universe": 18
+      },
+      {
+        "minimum_state_bits": 18,
+        "possible_seen_sets": 184756,
+        "seen": 10,
+        "universe": 20
+      },
+      {
+        "minimum_state_bits": 20,
+        "possible_seen_sets": 705432,
+        "seen": 11,
+        "universe": 22
+      },
+      {
+        "minimum_state_bits": 22,
+        "possible_seen_sets": 2704156,
+        "seen": 12,
+        "universe": 24
+      }
+    ],
+    "statement": "exact membership for arbitrary N-subsets of a U-element universe requires ceil(log2 binom(U,N)) bits; hence Omega(N) when U>=2N"
+  },
+  "failure_family": {
+    "cardinality_examples": [
+      {
+        "f": 0,
+        "minimum_safe_holders": 1,
+        "n": 1
+      },
+      {
+        "f": 0,
+        "minimum_safe_holders": 1,
+        "n": 2
+      },
+      {
+        "f": 1,
+        "minimum_safe_holders": 2,
+        "n": 2
+      },
+      {
+        "f": 0,
+        "minimum_safe_holders": 1,
+        "n": 3
+      },
+      {
+        "f": 1,
+        "minimum_safe_holders": 2,
+        "n": 3
+      },
+      {
+        "f": 2,
+        "minimum_safe_holders": 3,
+        "n": 3
+      },
+      {
+        "f": 0,
+        "minimum_safe_holders": 1,
+        "n": 4
+      },
+      {
+        "f": 1,
+        "minimum_safe_holders": 2,
+        "n": 4
+      },
+      {
+        "f": 2,
+        "minimum_safe_holders": 3,
+        "n": 4
+      },
+      {
+        "f": 3,
+        "minimum_safe_holders": 4,
+        "n": 4
+      }
+    ],
+    "correlated_counterexample": {
+      "allowed_maximal_failures": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "same_size_safe_holders": [
+        0,
+        2
+      ],
+      "same_size_unsafe_holders": [
+        0,
+        1
+      ]
+    },
+    "equivalence_cases": 2848
+  },
+  "independent_of_implementation": true,
+  "last_fact_indistinguishability": {
+    "conclusion": "received facts alone cannot distinguish completion under unbounded delay",
+    "observation": [
+      [
+        "a",
+        4
+      ],
+      [
+        "b",
+        6
+      ]
+    ],
+    "oracle_masses": [
+      10,
+      15
+    ]
+  },
+  "payload_identity_indistinguishability": {
+    "observed_payloads": [
+      "digest:x",
+      "digest:x"
+    ],
+    "oracle_worlds": [
+      {
+        "mass": 5,
+        "presentations": 2,
+        "units": 1
+      },
+      {
+        "mass": 10,
+        "presentations": 1,
+        "units": 2
+      }
+    ]
+  },
+  "projection_namespace_ablation": {
+    "ablations": [
+      {
+        "omitted_namespace": "unit",
+        "undetected_replay_id": "unit:old"
+      },
+      {
+        "omitted_namespace": "presentation",
+        "undetected_replay_id": "presentation:old"
+      },
+      {
+        "omitted_namespace": "transformation",
+        "undetected_replay_id": "transformation:old"
+      },
+      {
+        "omitted_namespace": "effect",
+        "undetected_replay_id": "effect:old"
+      }
+    ],
+    "all_four_namespaces_necessary_for_this_exact_fence": true
+  },
+  "schema_version": 1
+}

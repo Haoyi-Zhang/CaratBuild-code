@@ -1,0 +1,18 @@
+{
+  "accepted_runs": 6,
+  "all_exact_union": true,
+  "common_refusal_runs": 6,
+  "logical_restarts": 4,
+  "maximum_frame_bytes": 21143,
+  "maximum_page_facts": 16,
+  "maximum_rounds": 7,
+  "measurement": {
+    "cpu_seconds": 1.812106,
+    "elapsed_seconds": 1.824684,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 96.918,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "runs": 12,
+  "total_elapsed_ms": 1782.65
+}
