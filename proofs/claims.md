@@ -111,16 +111,16 @@ Repeated complete-fact pages eventually make every surviving set equal to the sa
 
 ### Representation-relative support result
 
-The smallest five-origin complete fixture has five data facts and five seals. Removing any one of the ten facts causes nonfinality. Six further ablations each admit a concrete bad outcome:
+The smallest five-origin complete fixture has five data facts and five seals. Removing any one of the ten facts causes nonfinality. Six further weakened-check discriminators admit a concrete bad outcome:
 
 1. shrinking the roster hides fifth-origin mass;
 2. replacing exact coverage with a boolean done bit allows a delayed fact after completion;
 3. dropping predecessor continuity skips an earlier window;
-4. allowing cross-window references makes an answer depend on future definitions;
+4. global ordinary checking admits a cross-window dependency refused by window-local checking;
 5. dropping global freshness permits retroactive identifier reuse;
 6. dropping event uniqueness lets replicas accept different masses at one coordinate.
 
-This proves irredundance for the implemented interval representation and checked predicates. It is not a universal minimal encoding theorem.
+The fourth fixture also places a foreign-batch definition inside the sealed interval. It therefore does not isolate self-containment from interval coverage. The ten support deletions establish fixture-relative support necessity; the six weaker-check comparisons do not establish single-condition irredundance for every predicate or a universal minimal encoding theorem.
 
 ### Theorem 7 — observer-only Byzantine omission impossibility
 
@@ -208,7 +208,7 @@ After projection, the convergence statement changes from raw set equality to the
 
 ### Bounded complete export
 
-A durably pinned raw holder exports a batch in encoded-byte-bounded pages. Every page repeats one stable manifest containing batch, total fact count, total canonical bytes, and seal IDs. The caller checks contiguous offsets, manifest stability, totals, seal set, and final sealed-batch validity before treating the export as complete. This is an integrity-checkable bounded protocol under the fixed honest model, not a cryptographic commitment.
+A durably pinned raw holder exports a batch in encoded-byte-bounded pages. Every page repeats one stable manifest containing batch, total fact count, total canonical bytes, and seal IDs. The caller checks contiguous offsets, manifest stability, totals, and final sealed-batch validity before treating the export as complete. It does not separately compare the manifest's batch and seal-ID fields with the returned facts. This is a bounded protocol under the fixed honest model, not a cryptographic commitment.
 
 The coordinate-gap comparator does not satisfy the convergence claim: permanent low holes can starve later coordinates, and split occupancy at one coordinate can hide alternatives. In the five-process execution, bounded sender-to-receiver relays require three rounds after two partitioned rounds and a pre-heal restart; post-convergence inventories equal the exact oracle union.
 
