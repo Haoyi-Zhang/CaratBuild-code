@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the completed bounded stages; never infer publication readiness."""
+"""Collect the bounded stage results and their measurement scope."""
 import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
