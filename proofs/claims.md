@@ -175,7 +175,7 @@ Summary and certificate persistence happen before raw-log replacement. If the pr
 
 ### Boundaries
 
-The exact replay index is bounded at 32 MiB of uncompressed canonical text. It improves adjudication but reduces compression; it is not history-independent metadata. The summary does not preserve arbitrary branch-label, transform-edge, dependency-label, or witness organization. It is structurally trusted and not cryptographically authenticated. The result is not general distributed garbage collection.
+The exact replay index is bounded at 32 MiB of uncompressed canonical text. It improves adjudication but reduces compression; it is not history-independent metadata. The aggregate query does not expose branch labels, transformation edges, or dependency labels, although the lossless index retains those fields in the canonical facts. Separately constructed witness objects are not stored. The summary is structurally trusted and not cryptographically authenticated. The raw-retention threshold concerns copies served by designated pinned exporters, not information erasure at projected endpoints. The result is not general distributed garbage collection.
 
 ## 9. Witness soundness and fixed-predicate inclusion minimality
 

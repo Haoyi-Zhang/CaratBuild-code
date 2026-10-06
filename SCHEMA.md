@@ -114,7 +114,7 @@ Projected admission is defined as follows:
 - live reuse of any projected unit, presentation, transform, effect, event, or seal ID is rejected;
 - a disjoint valid later batch is admitted and can finalize normally.
 
-Every projected query and cached finality response revalidates these fences against live facts and retained anchors. Thus bypassing the normal admission path and persisting a visible conflict makes query/finalize/restart fail closed instead of serving the cached `True`. The summary still does not preserve arbitrary branch labels, transformation-edge detail, dependency labels, or every discarded witness organization; imported summaries are structurally trusted rather than cryptographically authenticated.
+Every projected query and cached finality response revalidates these fences against live facts and retained anchors, including uniqueness of coordinates among the live facts. A visible conflict therefore prevents a cached finality response. The aggregate query does not expose branch labels, transformation edges, or dependency labels, but the lossless replay index retains those fields in the canonical facts. Separately constructed witness objects are not stored. Imported summaries are structurally trusted rather than cryptographically authenticated.
 
 ## 7. Services and transport
 

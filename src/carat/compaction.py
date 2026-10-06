@@ -273,6 +273,7 @@ class CompactedLedger:
             expected = reserved_events.get(fact["event"])
             if expected is not None and expected != text:
                 return False
+            reserved_events[fact["event"]] = text
             if text in replay_texts:
                 return False
             if fact["kind"] == "seal":
