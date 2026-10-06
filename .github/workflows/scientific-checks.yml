@@ -1,0 +1,65 @@
+name: Scientific checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bounded-science:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONPATH: src
+    steps:
+      - name: Check out flat artifact repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Run finite scientific campaigns and failing gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exercise the distributable tree, not the checkout's VCS internals.
+          mkdir "$RUNNER_TEMP/p023-science"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/p023-science"
+          cd "$RUNNER_TEMP/p023-science"
+          ulimit -v 2097152
+          ulimit -n 512
+          ulimit -u 128
+          ulimit -f 131072
+          date -u +%Y-%m-%dT%H:%M:%SZ > ci-run-start.txt
+          cp -a results ci-retained-results
+          {
+            timeout --signal=TERM --kill-after=10s 600s python -B scripts/reproduce_all.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B proofs/boundary_model_check.py --output results/boundary_model_check.json || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/verify_public_inputs.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/dependency_audit.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/robustness_audit.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/code_quality_audit.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/claim_path_audit.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/capture_environment.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 30s python -B scripts/reviewer_audit.py || exit "$?"
+          } 2>&1 | tee scientific-checks.log
+      - name: Retain raw results and diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scientific-checks-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/p023-science/results/
+            ${{ runner.temp }}/p023-science/scientific-checks.log
+            ${{ runner.temp }}/p023-science/ci-run-start.txt
+            ${{ runner.temp }}/p023-science/ci-retained-results/
+          if-no-files-found: error
+          retention-days: 14

@@ -476,8 +476,11 @@ def compact_sealed_batch(
     texts = sorted({canonical_pair(value)[0] for value in values})
     from .closure import sealed_query
 
-    closed = sealed_query(texts, batch, origins)
-    verified = check_sealed(texts, batch, origins)
+    # Both validation paths must receive the same roster, including when the
+    # public Iterable API is given a generator rather than a reusable tuple.
+    roster = tuple(origins)
+    closed = sealed_query(texts, batch, roster)
+    verified = check_sealed(texts, batch, roster)
     if (
         not closed.final
         or not verified.accepted

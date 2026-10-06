@@ -7,7 +7,6 @@ from dataclasses import asdict
 import itertools
 import json
 from pathlib import Path
-import resource
 import statistics
 import time
 from typing import Any, Callable, Iterable
@@ -377,6 +376,10 @@ def run_ambiguity(profiles: list[dict[str, Any]], raw_dir: Path, summary_dir: Pa
 
 
 def run_scale(raw_dir: Path, summary_dir: Path) -> dict[str, Any]:
+    # RSS measurement is POSIX-specific; finite semantic campaigns do not need
+    # this dependency merely to import their generators and collectors.
+    import resource
+
     sizes = (100, 500, 2000, 5000, 10000, 20000)
     rows: list[dict[str, Any]] = []
     for size_index, size in enumerate(sizes):

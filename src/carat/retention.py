@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from typing import Iterable, Mapping
 
 from .closure import sealed_query
-from .facts import Fact, canonical_pair, parse_text
+from .facts import Fact, canonical_pair
 from .independent_check import check_sealed
 
 
@@ -132,14 +132,10 @@ def issue_receipt(
         or closed.unique_units != verified.unique_units
     ):
         raise ValueError("raw batch is not independently finalized")
-    # A receipt holder must actually retain all non-seal batch facts.  The
-    # closure checks above establish interval coverage; this explicit check
-    # prevents issuing a receipt from a projection-only state.
-    if not any(
-        fact["kind"] != "seal" and fact.get("batch") == batch
-        for fact in (parse_text(text) for text in texts)
-    ):
-        raise ValueError("receipt holder has no raw batch facts")
+    # Exact closure already requires all allocated non-seal facts.  If every
+    # interval is empty, the seals are the complete raw batch; no positive-mass
+    # fact is required.  For a nonempty projected batch, anchor-only state fails
+    # coverage above.  The service also forbids receipt issuance after projection.
     return RetentionReceipt(
         batch=batch,
         holder=holder,

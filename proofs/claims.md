@@ -56,7 +56,7 @@ Under unbounded message delay, no function of observed accounting facts alone pr
 
 ### Proof
 
-Let the current observation `S` be four valid mint facts with mass 10. In world C, `S` is the complete window. In world L, one origin has already created a mass-5 fact whose delivery is delayed. The observer has identical state in both worlds. Finalizing at 10 is unsafe in L. Refusing forever is incomplete in C. Randomization cannot make a zero-error distinction on identical state. ∎
+Let `S` be four valid mint facts with mass 10. In world C, `S` is the complete window. Eventual completion in C requires a decision at a finite time `t`. In world L, one origin has already created a mass-5 fact; delay its delivery past `t`. The observation histories through `t` are identical, so finalizing at 10 is unsafe in L. For a randomized observer that completes almost surely in C, there is a finite horizon with positive probability of completion. Delaying the extra fact past that horizon gives the same positive probability of an unsafe decision in L, contradicting zero-error safety. ∎
 
 ### Interpretation
 
@@ -208,7 +208,7 @@ After projection, the convergence statement changes from raw set equality to the
 
 ### Bounded complete export
 
-A durably pinned raw holder exports a batch in encoded-byte-bounded pages. Every page repeats one stable manifest containing batch, total fact count, total canonical bytes, and seal IDs. The caller checks contiguous offsets, manifest stability, totals, and final sealed-batch validity before treating the export as complete. It does not separately compare the manifest's batch and seal-ID fields with the returned facts. This is a bounded protocol under the fixed honest model, not a cryptographic commitment.
+A durably pinned raw holder exports a batch in encoded-byte-bounded pages. Every page repeats one stable manifest containing batch, total fact count, total canonical bytes, and seal IDs. The caller checks returned offsets, an advancing cursor, manifest stability, totals, and final sealed-batch validity before treating the export as complete. It does not separately compare the manifest's batch and seal-ID fields with the returned facts. This is a bounded protocol under the fixed honest model, not a cryptographic commitment.
 
 The coordinate-gap comparator does not satisfy the convergence claim: permanent low holes can starve later coordinates, and split occupancy at one coordinate can hide alternatives. In the five-process execution, bounded sender-to-receiver relays require three rounds after two partitioned rounds and a pre-heal restart; post-convergence inventories equal the exact oracle union.
 

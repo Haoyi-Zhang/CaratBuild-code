@@ -12,7 +12,6 @@ import itertools
 import json
 import os
 from pathlib import Path
-import resource
 import subprocess
 import sys
 import tempfile
@@ -355,7 +354,7 @@ async def sealed_windows(root: Path) -> dict[str, Any]:
     world_complete = sealed_query(observed_data + empty_n3_seals, batch, NODE_NAMES)
     world_delayed = sealed_query(observed_data + seals, batch, NODE_NAMES)
     if (not world_complete.final or world_delayed.final
-            or world_complete.gross_mass != world_delayed.gross_mass != 10):
+            or world_complete.gross_mass != 10 or world_delayed.gross_mass != 10):
         raise AssertionError("sealed-window two-world discriminator failed")
 
     enumeration = []

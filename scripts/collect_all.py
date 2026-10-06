@@ -7,7 +7,7 @@ SUMMARY=ROOT/"results/summary"
 load=lambda name: json.loads((SUMMARY/name).read_text())
 legacy=load("overview.json")
 tests=load("unit_tests.json")
-assert tests["successful"] and tests["tests_run"] == 66
+assert tests["successful"] and tests["tests_run"] == 72
 assert tests.get("module_level_tests_run", 0) >= 8
 names=("identity","transport","service_pilot","service","recovery",
        "compaction_boundaries","public_pair","semantic_boundaries",
