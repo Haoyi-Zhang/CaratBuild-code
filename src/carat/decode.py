@@ -234,6 +234,7 @@ def decode(values: Iterable[str | Fact]) -> DecodeResult:
             )
 
     valid_effects: dict[str, tuple[str, Fact]] = {}
+    presentation_units: dict[str, frozenset[str]] = {}
     for effect_id, entries in sorted(effects.items()):
         if len(entries) > 1:
             witnesses.append(
@@ -260,7 +261,11 @@ def decode(values: Iterable[str | Fact]) -> DecodeResult:
                 )
             )
             continue
-        atoms = {unit for unit, _ in entry[1]["atoms"]}
+        presentation_id = fact["presentation"]
+        atoms = presentation_units.get(presentation_id)
+        if atoms is None:
+            atoms = frozenset(unit for unit, _ in entry[1]["atoms"])
+            presentation_units[presentation_id] = atoms
         if fact["unit"] not in atoms:
             witnesses.append(
                 Witness(

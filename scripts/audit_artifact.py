@@ -37,7 +37,7 @@ def main() -> int:
     tests = load_json(SUMMARY / "unit_tests.json")
     if (
         not tests.get("successful")
-        or tests.get("tests_run") != 72
+        or tests.get("tests_run") != 78
         or tests.get("module_level_tests_run", 0) < 8
     ):
         raise AssertionError("the complete deterministic test surface did not pass")
