@@ -2,13 +2,13 @@
 """Collect the bounded stage results and their measurement scope."""
 import json
 from pathlib import Path
+from unit_test_contract import validate_current_unit_tests
 ROOT=Path(__file__).resolve().parents[1]
 SUMMARY=ROOT/"results/summary"
 load=lambda name: json.loads((SUMMARY/name).read_text())
 legacy=load("overview.json")
 tests=load("unit_tests.json")
-assert tests["successful"] and tests["tests_run"] == 78
-assert tests.get("module_level_tests_run", 0) >= 8
+validate_current_unit_tests(tests)
 names=("identity","transport","service_pilot","service","recovery",
        "compaction_boundaries","public_pair","semantic_boundaries",
        "sealed_windows","multiprocess_retention","completion_boundaries",

@@ -10,6 +10,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+from unit_test_contract import validate_current_unit_tests
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "summary"
@@ -35,12 +36,7 @@ def require_paths(cell: str) -> None:
 def main() -> int:
     complete = load_json(SUMMARY / "complete_overview.json")
     tests = load_json(SUMMARY / "unit_tests.json")
-    if (
-        not tests.get("successful")
-        or tests.get("tests_run") != 78
-        or tests.get("module_level_tests_run", 0) < 8
-    ):
-        raise AssertionError("the complete deterministic test surface did not pass")
+    validate_current_unit_tests(tests)
     if not complete.get("documented_commands_completed") or not complete.get("scientific_completion"):
         raise AssertionError("the result collector did not close the bounded scientific scope")
     if complete.get("venue_submission_ready") is not False:
