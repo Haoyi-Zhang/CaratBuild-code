@@ -32,6 +32,39 @@ MAX_RECEIPT_LOG_BYTES = 2_097_152
 MAX_RECEIPTS = 2_048
 
 
+def _raw_export_facts(values: Iterable[str], batch: str) -> tuple[list[str], int, int]:
+    """Return target facts plus the transitive predecessor-seal context.
+
+    Earlier data are not part of the target batch's accounting surface.  Its
+    predecessor seals are nevertheless required by the standalone finality
+    check, so they travel in the same bounded, manifested package.
+    """
+    parsed = {text: parse_text(text) for text in values}
+    target = {text for text, fact in parsed.items() if fact.get("batch") == batch}
+    events: dict[str, list[str]] = {}
+    for text, fact in parsed.items():
+        events.setdefault(fact["event"], []).append(text)
+    support: set[str] = set()
+    for text in sorted(target):
+        cursor = parsed[text]
+        if cursor["kind"] != "seal":
+            continue
+        origin = cursor["origin"]
+        while cursor["previous"] > 0:
+            event = f"{origin}:{cursor['previous']}"
+            predecessors = events.get(event, [])
+            if len(predecessors) != 1:
+                raise ValueError("raw export requires an unambiguous predecessor seal")
+            predecessor = predecessors[0]
+            cursor = parsed[predecessor]
+            if cursor["kind"] != "seal" or cursor["origin"] != origin:
+                raise ValueError("raw export predecessor is not an origin-consistent seal")
+            support.add(predecessor)
+    support.difference_update(target)
+    target_data = sum(parsed[text]["kind"] != "seal" for text in target)
+    return sorted(target | support), target_data, len(support)
+
+
 def _sync_directory(path: Path) -> None:
     descriptor = os.open(path, os.O_RDONLY)
     try:
@@ -555,10 +588,9 @@ class IndependentNode:
                 raise ValueError("projected endpoint has no raw batch to export")
             if request["batch"] not in self.raw_pins:
                 raise ValueError("bounded complete export requires a durable raw pin")
-            facts = [
-                text for text in sorted(self.store.replica.facts)
-                if parse_text(text).get("batch") == request["batch"]
-            ]
+            facts, target_data, predecessor_seals = _raw_export_facts(
+                self.store.replica.facts, request["batch"]
+            )
             offset = natural(request["offset"], "offset", 300_000)
             limit = natural(request["limit"], "limit", MAX_PAGE_FACTS)
             if limit == 0:
@@ -567,6 +599,9 @@ class IndependentNode:
                 "batch": request["batch"],
                 "total_facts": len(facts),
                 "total_canonical_bytes": sum(len(text.encode("utf-8")) for text in facts),
+                "target_data_facts": target_data,
+                "target_seals": len(facts) - target_data - predecessor_seals,
+                "predecessor_seals": predecessor_seals,
                 "seal_ids": list(self.raw_pins[request["batch"]].seal_ids),
             }
             selected = facts[offset:offset + limit]

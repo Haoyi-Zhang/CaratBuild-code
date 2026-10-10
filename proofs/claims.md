@@ -208,7 +208,7 @@ After projection, the convergence statement changes from raw set equality to the
 
 ### Bounded complete export
 
-A durably pinned raw holder exports a batch in encoded-byte-bounded pages. Every page repeats one stable manifest containing batch, total fact count, total canonical bytes, and seal IDs. The caller checks returned offsets, an advancing cursor, manifest stability, totals, and final sealed-batch validity before treating the export as complete. It does not separately compare the manifest's batch and seal-ID fields with the returned facts. This is a bounded protocol under the fixed honest model, not a cryptographic commitment.
+A durably pinned raw holder exports the target batch and the transitive predecessor-seal anchors required by standalone finality in encoded-byte-bounded pages. Earlier-batch data are not included. Every page repeats one stable manifest containing batch, package fact/byte totals, target data and seal counts, predecessor-seal count, and target seal IDs. The caller checks returned offsets, an advancing cursor, manifest stability, totals, and final sealed-batch validity before treating the export as complete. It does not separately compare the manifest's batch and seal-ID fields with the returned facts. This is a bounded protocol under the fixed honest model, not a cryptographic commitment.
 
 The coordinate-gap comparator does not satisfy the convergence claim: permanent low holes can starve later coordinates, and split occupancy at one coordinate can hide alternatives. In the five-process execution, bounded sender-to-receiver relays require three rounds after two partitioned rounds and a pre-heal restart; post-convergence inventories equal the exact oracle union.
 

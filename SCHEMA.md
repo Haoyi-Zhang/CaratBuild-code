@@ -11,7 +11,7 @@ Every fact has:
 - `batch` — the accounting-window name;
 - a kind-specific globally scoped identifier.
 
-The network service bounds each canonical fact at 32 KiB, each length-prefixed JSON frame at 1 MiB, and each endpoint store at 2,048 facts or 32 MiB. A page is also capped at 32 facts, but both page and `put` batching are shortened by the actual encoded JSON byte budget. The complete raw export is paged under the same frame budget and carries a stable manifest containing batch name, fact count, canonical-byte count, and seal IDs. Larger direct in-memory experiments bypass the service limits and are reported separately.
+The network service bounds each canonical fact at 32 KiB, each length-prefixed JSON frame at 1 MiB, and each endpoint store at 2,048 facts or 32 MiB. A page is also capped at 32 facts, but both page and `put` batching are shortened by the actual encoded JSON byte budget. The complete raw export is paged under the same frame budget and carries a stable manifest containing batch name, package fact count, canonical-byte count, target-data/seal counts, predecessor-seal count, and target seal IDs. Larger direct in-memory experiments bypass the service limits and are reported separately.
 
 ## 2. Fact kinds
 
@@ -63,13 +63,13 @@ For origin `o`, the seal declares the interval `(previous, frontier]`. The inter
 
 A determined accepted state has:
 
-- one definition per semantic identifier;
+- one definition per mint, presentation, transform, and effect identifier;
 - one canonical fact per event coordinate;
 - all named units and presentations resolved;
 - every transform satisfying the signed-set law above;
 - every effect unit belonging to its presentation.
 
-The decoder emits refusal witnesses. The separately structured checker reevaluates their public predicates and verifies inclusion minimality under the fixed support convention. It shares the canonical normalizer and therefore supplies differential validation rather than an independent formal semantics.
+Seal-identifier uniqueness is checked by fixed-roster finality, not by ordinary accounting acceptance. The decoder emits refusal witnesses. The separately structured checker reevaluates their public predicates and verifies inclusion minimality under the fixed support convention. It shares the canonical normalizer and therefore supplies differential validation rather than an independent formal semantics.
 
 ## 4. Fixed-roster finality
 
@@ -122,7 +122,7 @@ The original bounded service uses five loopback listeners and five logs in one e
 
 The correctness transport repeatedly requests pages of complete canonical facts. Both fact count and actual encoded JSON bytes bound every response and every `put` request. A mixed raw/projected receiver filters exact replays as idempotent no-ops while admitting the remaining new facts atomically; a genuine coordinate or identifier conflict still rejects the admission. End-of-file resets the cursor so later sweeps revisit earlier sort positions. Under a finite quiescent union, fair successful sweeps, surviving copies, and sufficient capacity, every connected survivor eventually holds the same admitted set. After projection the statement is conditional on the projected adjudication contract above: exact old replay is elided, disjoint later batches propagate, and visible conflicts are refused. This is not a communication-optimal protocol.
 
-A raw pinned endpoint exports a complete batch through bounded pages. The caller verifies one stable manifest, returned offsets, an advancing cursor, total fact count, total canonical bytes, and a final sealed-batch check. It does not separately bind the manifest's batch or seal-ID fields to the reconstructed facts. The export mechanism provides bounded and checkable completeness inside the fixed-roster model; it is not a cryptographic commitment.
+A raw pinned endpoint exports the target batch plus its transitive predecessor-seal anchors through bounded pages, without earlier batches' data. The manifest reports `target_data_facts`, `target_seals`, and `predecessor_seals` separately; `total_facts` and `total_canonical_bytes` cover the complete package. The caller verifies one stable manifest, returned offsets, an advancing cursor, total fact count, total canonical bytes, and a final sealed-batch check. It does not separately bind the manifest's batch or seal-ID fields to the reconstructed facts. The export mechanism provides bounded and checkable completeness inside the fixed-roster model; it is not a cryptographic commitment.
 
 A separate coordinate-gap transport is retained as a negative comparator. Permanent low holes can hide later facts, and alternative facts at one coordinate can remain mutually undiscovered.
 

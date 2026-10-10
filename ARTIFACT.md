@@ -28,7 +28,7 @@ The boundary checker does not import the CARAT implementation. It checks the ide
 
 ## Projection and transport contract
 
-Projection stores exact aggregate fields, identifier fences, retained seals, and a bounded compressed index of discarded canonical facts. An exact old replay is a no-op; a different fact reusing a discarded coordinate, an extra old-window seal, or a reused identifier is rejected. A disjoint later batch remains admissible. Pages, `put` requests, and raw export are bounded by actual encoded JSON bytes as well as fact count; raw export carries a manifest that the caller verifies before accepting completeness.
+Projection stores exact aggregate fields, identifier fences, retained seals, and a bounded compressed index of discarded canonical facts. An exact old replay is a no-op; a different fact reusing a discarded coordinate, an extra old-window seal, or a reused identifier is rejected. A disjoint later batch remains admissible. Pages, `put` requests, and raw export are bounded by actual encoded JSON bytes as well as fact count; raw export includes transitive predecessor-seal context and carries a manifest that separates target data and seals from predecessor seals, with fact and byte totals for the entire package; the caller checks that manifest before accepting completeness.
 
 ## Interpreting performance
 
