@@ -1,6 +1,6 @@
 """Pure receipt/count regressions; do not run the scientific campaigns.
 
-Kept outside tests/ so these gate checks do not change its 81-case campaign
+Kept outside tests/ so these gate checks do not change its 83-case campaign
 surface. Discovery below only counts existing cases; it does not run them.
 """
 from __future__ import annotations

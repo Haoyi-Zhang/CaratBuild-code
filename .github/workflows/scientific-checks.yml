@@ -42,6 +42,7 @@ jobs:
           cp -a results ci-retained-results
           {
             timeout --signal=TERM --kill-after=10s 600s python -B scripts/reproduce_all.py || exit "$?"
+            timeout --signal=TERM --kill-after=5s 90s python -B scripts/compare_storage.py --output results/storage-comparison.json || exit "$?"
             timeout --signal=TERM --kill-after=5s 30s python -B proofs/boundary_model_check.py --output results/boundary_model_check.json || exit "$?"
             timeout --signal=TERM --kill-after=5s 30s python -B scripts/verify_public_inputs.py || exit "$?"
             timeout --signal=TERM --kill-after=5s 30s python -B scripts/dependency_audit.py || exit "$?"

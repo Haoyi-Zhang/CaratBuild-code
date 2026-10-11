@@ -16,7 +16,7 @@ The decoder builds effect unit-membership sets lazily once per uniquely defined 
 PYTHONPATH=src python3 -B -m unittest discover -s tests -p test_effect_membership.py -v
 ```
 
-Full discovery includes those six cases and the three in-process raw-export context cases in `tests/test_export_context.py`, so the current collector and final audit require exactly 81 tests, including at least eight module-level cases. They also require an actual successful run with zero failures, errors or skips. The earlier 78-test gate predates the three export cases; neither that label nor the retained 72-test Linux receipt is an 81-test execution. Historical campaign labels and results remain unchanged.
+Full discovery includes six effect-membership cases, three raw-export context cases and two lossless-storage comparison cases. The current collector requires exactly 83 tests, including at least eight module-level cases, with zero failures, errors or skips. The retained Linux receipt covers its 72-test source surface; it is not an execution of the expanded suite.
 
 The gate's receipt/count regressions are kept outside `tests/` so they do not change the 81-case campaign surface. They count discovery without running it and require inclusion of all three export cases:
 
@@ -25,6 +25,14 @@ python3 -B scripts/test_unit_test_contract.py
 PYTHONPATH=src python3 -B -m unittest discover -s tests -p test_export_context.py -v
 ```
 
-These bounded checks do not rerun services, crash recovery, external build tasks or measurements, and do not establish a complete 81-test Linux reproduction.
+These bounded checks exercise their named code paths without rerunning the service and process campaigns.
+
+## Lossless storage comparison
+
+```bash
+python3 -B scripts/compare_storage.py --output results/storage-comparison.json
+```
+
+The six-size comparison uses identical canonical facts and full accounting after decoding each representation. At 80 batches, raw JSONL is 503,178 bytes, whole-log zlib is 37,593, per-batch zlib with base-85/JSON framing is 77,606, and projection is 154,644. Each restores all facts. Projection therefore neither erases information nor establishes superior compression. Raw-serving holder obligations and completion checks are separate from encoding size. Self-contained windows admit disjoint fresh identities; reused work spanning windows requires a different accounting contract.
 
 The evaluated model is a finite fixed faithful-origin roster, crash-stop endpoints, bounded local resources, and eventual delivery after the final failure. Projection retains an exact bounded replay index so old facts are idempotent, visible conflicts remain rejectable, and disjoint later batches can continue. The artifact does not claim Byzantine security, dynamic membership, WAN performance, cryptographic provenance, or production deployment.
