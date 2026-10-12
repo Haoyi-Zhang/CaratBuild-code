@@ -10,7 +10,9 @@ Let `F` be a finite set of canonical facts. A mint fact defines a pair `(u,m)` w
 G(F) = sum m(u) over the unique mint identities in F.
 ```
 
-Presentations, transformations, effects, and seals have zero mass. For a presentation `p`, let `A(p)` be its finite unit-to-sign map. The wire field `fresh` is reserved and must be empty: only a mint creates a unit. Rebase and cherry-pick require one input and one equal output; fork requires one input and one or more equal outputs; revert requires one input and one sign-negated output; squash requires at least two inputs and one output equal to their sign-consistent union. A state is **ordinary-accepted** when identifiers and event coordinates are unambiguous, references resolve, each transformation satisfies this written algebra, and each effect unit belongs to its named presentation. The decoder/checker agreement is differential implementation evidence, not the definition of correctness.
+Presentations, transformations, effects, and seals have zero mass. For a presentation `p`, let `A(p)` be its finite unit-to-sign map. The wire field `fresh` is reserved and must be empty: only a mint creates a unit. Rebase and cherry-pick require one input and one equal output; fork requires one input and one or more equal outputs; revert requires one input and one sign-negated output; squash requires at least two inputs and one output equal to their sign-consistent union. A state is **ordinary-accepted** when mint, presentation, transform, and effect identifiers and event coordinates are unambiguous, references resolve, each transformation satisfies this written algebra, and each effect unit belongs to its named presentation. The decoder/checker agreement is differential implementation evidence, not the definition of correctness.
+
+Seal-identifier uniqueness is an additional fixed-roster finality condition; ordinary acceptance alone does not check that namespace.
 
 For a fixed origin roster `O` and batch `b`, each origin seal declares an interval `(p_o,f_o]`. The **allocated batch facts** of a faithful origin are exactly its batch facts at coordinates in that interval. A batch is **final** when the checked conditions in `SCHEMA.md` hold and the decoder and separate checker agree.
 
@@ -85,7 +87,7 @@ For each origin, faithfulness makes the declared interval its complete allocatio
 
 ### Theorem 5 — admissible-extension stability
 
-Any extension that uses later batches, new event coordinates, globally fresh unit/presentation/transform/effect IDs, and valid predecessor chains leaves an accepted earlier batch's fact set and aggregate unchanged.
+Any admissible extension that uses later batches, new event coordinates, globally fresh unit/presentation/transform/effect/seal IDs, and valid predecessor chains leaves an accepted earlier batch's fact set and aggregate unchanged. Exact replay of an existing canonical fact is also admissible and is set-idempotent.
 
 ### Proof
 

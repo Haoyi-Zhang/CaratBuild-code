@@ -18,7 +18,7 @@ PYTHONPATH=src python3 -B -m unittest discover -s tests -p test_effect_membershi
 
 Full discovery includes six effect-membership cases, three raw-export context cases and two lossless-storage comparison cases. The current collector requires exactly 83 tests, including at least eight module-level cases, with zero failures, errors or skips. The retained Linux receipt covers its 72-test source surface; it is not an execution of the expanded suite.
 
-The gate's receipt/count regressions are kept outside `tests/` so they do not change the 81-case campaign surface. They count discovery without running it and require inclusion of all three export cases:
+The gate's receipt/count regressions are kept outside `tests/` so they do not change the 83-case campaign surface. They count discovery without running it and require inclusion of all three export cases:
 
 ```bash
 python3 -B scripts/test_unit_test_contract.py
