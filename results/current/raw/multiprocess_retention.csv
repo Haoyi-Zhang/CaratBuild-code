@@ -1,0 +1,9 @@
+phase,node,final,mass,fact_log_bytes,projection_bytes
+raw-final,n0,True,600,21740,0
+raw-final,n1,True,600,21740,0
+raw-final,n2,True,600,21740,0
+raw-final,n3,True,600,21740,0
+raw-final,n4,True,600,21740,0
+projected,n3,True,600,630,6707
+projected,n4,True,600,630,6707
+projected-restart,n4,True,600,630,6707

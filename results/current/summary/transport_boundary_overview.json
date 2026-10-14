@@ -1,0 +1,80 @@
+{
+  "boundary_rows": [
+    {
+      "delivered_fact_occurrences": 70,
+      "expected_facts": 141,
+      "fixture": "prefix-complete",
+      "left_missing": 0,
+      "page_payload_bytes": "",
+      "right_missing": 0,
+      "rounds": 5,
+      "same_integrity_decision": true,
+      "transport": "coordinate-gaps"
+    },
+    {
+      "delivered_fact_occurrences": 282,
+      "expected_facts": 141,
+      "fixture": "prefix-complete",
+      "left_missing": 0,
+      "page_payload_bytes": 31808,
+      "right_missing": 0,
+      "rounds": 9,
+      "same_integrity_decision": true,
+      "transport": "full-fact-pages"
+    },
+    {
+      "delivered_fact_occurrences": 0,
+      "expected_facts": 77,
+      "fixture": "permanent-holes",
+      "left_missing": 0,
+      "page_payload_bytes": "",
+      "right_missing": 6,
+      "rounds": 16,
+      "same_integrity_decision": true,
+      "transport": "coordinate-gaps"
+    },
+    {
+      "delivered_fact_occurrences": 64,
+      "expected_facts": 77,
+      "fixture": "permanent-holes",
+      "left_missing": 0,
+      "page_payload_bytes": 7286,
+      "right_missing": 0,
+      "rounds": 2,
+      "same_integrity_decision": true,
+      "transport": "full-fact-pages"
+    },
+    {
+      "delivered_fact_occurrences": 0,
+      "expected_facts": 2,
+      "fixture": "split-coordinate",
+      "left_missing": 1,
+      "page_payload_bytes": "",
+      "right_missing": 1,
+      "rounds": 16,
+      "same_integrity_decision": true,
+      "transport": "coordinate-gaps"
+    },
+    {
+      "delivered_fact_occurrences": 3,
+      "expected_facts": 2,
+      "fixture": "split-coordinate",
+      "left_missing": 0,
+      "page_payload_bytes": 441,
+      "right_missing": 0,
+      "rounds": 1,
+      "same_integrity_decision": true,
+      "transport": "full-fact-pages"
+    }
+  ],
+  "enumerated_cases": 324,
+  "enumerated_converged": 324,
+  "maximum_enumeration_rounds": 5,
+  "measurement": {
+    "cpu_seconds": 0.276777,
+    "elapsed_seconds": 0.276979,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 27.145,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  }
+}

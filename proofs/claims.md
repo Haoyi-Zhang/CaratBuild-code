@@ -167,6 +167,12 @@ For an ordinary-accepted, final, self-contained batch with no cross-barrier refe
 
 The constructor derives the exact aggregates and identifier sets from the accepted raw batch and stores the discarded canonical facts in a lossless bounded replay index. It retains the exact origin seals as anchors. Loading a summary decodes that index, reparses every fact, recomputes all aggregates and fences, and requires equality with the stored summary and anchors. Thus a successful load reconstructs the same batch-local result. ∎
 
+The executable loader also requires a complete single zlib stream and no trailing
+bytes. Recovering all canonical fact text before a missing checksum trailer is
+not stream completion. `tests/test_replay_stream.py` distinguishes these cases
+on owned compressor output while retaining the uncompressed-index bound. This
+is a container-validity check, not a cryptographic authenticity argument.
+
 ### Post-projection admission
 
 The replay index distinguishes two cases that an identifier-only summary cannot. Reoffering an exact discarded fact is an idempotent no-op; reoffering a different fact at the same deleted event coordinate is a conflict and is rejected. An extra same-batch seal, a seal ID reused by a later batch, or reuse of any projected semantic identifier is also rejected. A disjoint legal later batch is admitted. Every projected query/finalize path revalidates these conditions against live facts and retained anchors, so bypassing ordinary admission and persisting a visible conflict makes query, cached finalization, and restart fail closed.

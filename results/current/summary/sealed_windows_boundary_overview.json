@@ -1,0 +1,31 @@
+{
+  "admissible_future_subsets": 32,
+  "complete_world_final": true,
+  "completed_phase_final_nodes": 5,
+  "delayed_world_final": false,
+  "enumerated_arrival_subsets": 32,
+  "final_mass": 15,
+  "final_subsets": 1,
+  "future_phase_final_nodes": 5,
+  "future_subsets_preserving_finality": 32,
+  "global_identifier_reuse_refused": true,
+  "illegal_phase_final_nodes": 0,
+  "measurement": {
+    "cpu_seconds": 0.298775,
+    "elapsed_seconds": 0.31019,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 27.176,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "open_phase_final_nodes": 0,
+  "ordinary_data_mass_in_both_worlds": 10,
+  "restart_phase_final_nodes": 5,
+  "retained_seal_anchors": 5,
+  "scope": "five loopback endpoints, fixed honest-origin roster, self-contained batch, and local sealed projection; no authentication, Byzantine origin, or distributed surviving-copy/reclamation claim",
+  "sealed_projection_determined": true,
+  "sealed_projection_mass": 15,
+  "sealed_projection_summaries": 1,
+  "service_observations": 25,
+  "service_phases": 5,
+  "two_world_cases": 2
+}

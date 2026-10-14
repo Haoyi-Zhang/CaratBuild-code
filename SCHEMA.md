@@ -106,6 +106,11 @@ A nonholder may project a final self-contained batch after validating a retentio
 
 The exact replay index is bounded at 32 MiB of uncompressed canonical text. It is not a constant-size sketch and it weakens compression relative to an identifier-only summary, but it is what lets a projected endpoint distinguish an idempotent replay from a different fact reusing a deleted event coordinate. On load, the endpoint revalidates the certificate, checks that it is not a named raw holder, decodes the replay index, recomputes all aggregates and identifier sets, and requires the retained anchors to match exactly. Summary and certificate persistence precede atomic raw-log replacement. Recovery rechecks the same conditions before completing an interrupted replacement.
 
+The encoded replay field contains exactly one complete zlib stream. A missing
+checksum trailer or bytes following that stream are rejected even if the
+decompressed canonical texts and aggregate fields agree. This preserves the
+existing output bound and does not authenticate a coherent rewrite.
+
 Projected admission is defined as follows:
 
 - an exact replay of a discarded fact is accepted as an idempotent no-op;

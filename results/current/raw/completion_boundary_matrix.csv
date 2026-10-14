@@ -1,0 +1,8 @@
+condition,naive_admits,carat_admits,bad_outcome
+fixed-roster,True,False,mass-10-final-while-origin-n4-may-have-mass-5
+exact-coordinate-coverage,True,False,seal-overtakes-delayed-mass-5-fact
+predecessor-seal-continuity,True,False,origin-history-can-skip-an-unaccounted-window
+self-contained-relations,True,False,final-batch-depends-on-a-definition-in-another-batch
+global-identifier-freshness,True,False,later-input-retroactively-reuses-a-finalized-unit
+event-coordinate-uniqueness,True,False,replicas-finalize-different-masses-1-and-8
+faithful-origin-declaration,True,True,a-byzantine-origin-can-hide-an-unobserved-mass-5-fact

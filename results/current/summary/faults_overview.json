@@ -1,0 +1,15 @@
+{
+  "arrival_order_branch_divergent_runs": 141,
+  "checker_accepted": 160,
+  "converged": 160,
+  "determined": 160,
+  "maximum_mass_error": 0,
+  "measurement": {
+    "cpu_seconds": 11.983003,
+    "elapsed_seconds": 11.985054,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 19.02,
+    "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+  },
+  "runs": 160
+}

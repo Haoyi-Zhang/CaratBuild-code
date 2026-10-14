@@ -53,7 +53,7 @@ The following semantic results remain claim-critical and are asserted by the fin
 - one process kill preserves 46 acknowledged fact occurrences and reaches the 46-fact union;
 - the executable graph records twelve outcomes from nine subprocesses: seven pass, two fail, three skip.
 
-Projection byte counts and all descriptive timing/resource measurements belong to the retained clean run and must be read from `raw/compaction.csv`, `raw/multiprocess_retention_summary.json`, `raw/scale.csv`, and `summary/complete_overview.json`. That run covered 66 tests (eight module-level); the current suite has 72 after six scientific regressions. New sidecar checks do not replace or relabel these historical host measurements.
+Original projection byte counts and campaign timing/resource measurements belong to their retained runs and must be read from `raw/compaction.csv`, `raw/multiprocess_retention_summary.json`, `raw/scale.csv`, and `summary/complete_overview.json`. The older clean run covered 66 tests (eight module-level), and the retained Linux run covered 72. The expanded current gate is 91; the selected portable receipts do not establish a complete 91-test execution. No new measurement replaces those historical host records.
 
 ## Resource scope
 
@@ -61,4 +61,19 @@ Projection byte counts and all descriptive timing/resource measurements belong t
 
 ## Current clean-copy record
 
-The manuscript's resource and latency values all come from the single successful run recorded in `final_clean_reproduction.json` and `reproduction_logs/clean-offline-*`.  Historical `returncode=1` records remain separate in `independent_reproduction_trials.json` and `reproduction_failures/`; they are not overwritten or reinterpreted as timing variance.
+The original campaign resource and latency values come from the run recorded in `final_clean_reproduction.json` and `reproduction_logs/clean-offline-*`, with the retained Linux reconstruction recorded separately under `current/`. `storage-comparison.json` records the lossless encoding control, and `storage-lifecycle/` records the same-contract local native query/lifecycle control; their Windows measurements are not campaign samples. Historical `returncode=1` records remain separate in `independent_reproduction_trials.json` and `reproduction_failures/`; they are not overwritten or reinterpreted as timing variance.
+
+## Complete-stream and local lifecycle evidence
+
+`stream-controls/` preserves the owned complete-stream red/green receipts,
+selected current portable modules and pure test-contract controls. It also
+retains a fresh replay of the unchanged six-size encoding control; the original
+measurement above is not overwritten. `storage-lifecycle/input.json`,
+`samples.json`, `summary.json` and `bindings.json` contain exact arrivals,
+individual lifecycle query/certificate/reconstruction outputs, full local file
+inventories, per-phase costs and nine-source/native-runtime bindings.
+
+The local lifecycle includes one query archive and three actual raw-copy/receipt
+files for the first window. It excludes network and distributed failure
+execution, power loss, cold-cache control, memory and transient storage peaks.
+Functional equality, not a general compression or speed advantage, is its result.

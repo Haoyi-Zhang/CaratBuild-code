@@ -61,9 +61,8 @@ assert extended["executable_build"]["scenarios"] == 3
 assert extended["executable_build"]["task_records"] == 12
 assert extended["executable_build"]["checker_accepted"]
 measured=[tests["measurement"]]+[v["measurement"] for v in legacy.values() if isinstance(v,dict) and "measurement" in v]+[v["measurement"] for v in extended.values()]
-result={"documented_commands_completed":True,"scientific_completion":True,
+result={"semantic_checks_passed":True,
         "completion_scope":"bounded fixed-roster crash-stop last-fact characterization and executable instance",
-        "venue_submission_ready":False,
         "tests":{k:tests[k] for k in ("tests_run","failures","errors","successful")},
         "original_campaigns":legacy,"boundary_campaigns":extended,
         "resources":{"measured_stage_cpu_seconds":round(sum(x["cpu_seconds"] for x in measured),6),
@@ -74,4 +73,4 @@ result={"documented_commands_completed":True,"scientific_completion":True,
                      "dynamic membership and multi-host performance are outside the fixed-roster localhost model",
                      "the executable adapter does not run the upstream pytest build"]}
 (SUMMARY/"complete_overview.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
-print(json.dumps({k:result[k] for k in ("documented_commands_completed","scientific_completion","completion_scope","venue_submission_ready","tests","resources","nonclaims")},indent=2))
+print(json.dumps({k:result[k] for k in ("semantic_checks_passed","completion_scope","tests","resources","nonclaims")},indent=2))

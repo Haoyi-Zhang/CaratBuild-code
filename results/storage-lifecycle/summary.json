@@ -1,0 +1,33 @@
+{
+  "exclusions": "process/import startup, fixture generation, experiment packaging, OS cold-cache control, network, power loss and distributed crash testing",
+  "initial_facts": 10,
+  "later_facts": 10,
+  "memory_and_transient_peak_bytes": null,
+  "modes": {
+    "projection": {
+      "all_endpoint_and_holder_bytes": [
+        6762
+      ],
+      "archive_bytes": [
+        3162
+      ],
+      "median_total_cpu_seconds": 0.046875,
+      "median_total_wall_seconds": 0.046499399992171675
+    },
+    "sqlite": {
+      "all_endpoint_and_holder_bytes": [
+        36368
+      ],
+      "archive_bytes": [
+        32768
+      ],
+      "median_total_cpu_seconds": 0.046875,
+      "median_total_wall_seconds": 0.04787789998226799
+    }
+  },
+  "native_distributed_service": false,
+  "queries_per_phase": 5,
+  "same_query_and_reconstruction": true,
+  "scope": "one local query archive plus three synchronized first-window raw copies/receipts; create, commit, checked queries, replay, later append, close/reopen and full reconstruction",
+  "trial_count": 10
+}

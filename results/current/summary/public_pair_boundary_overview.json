@@ -1,0 +1,43 @@
+{
+  "adapter_cases": 9,
+  "matched_expected_admission": 9,
+  "measurement": {
+    "cpu_seconds": 0.053424,
+    "elapsed_seconds": 0.05938,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 27.031,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "normalized_facts": 6,
+  "scope": "generic bounded three-file declared-pair adapter evaluated on one packaged pytest fix/backport pair; no upstream tests or builds executed",
+  "selected_added_lines_per_input": 15,
+  "selected_files_per_input": 3,
+  "selected_hunks": 6,
+  "service": {
+    "application_frame_bytes": 27154,
+    "checker_accepted_nodes": 5,
+    "converged_nodes": 5,
+    "delayed_responses": 0,
+    "determined_nodes": 5,
+    "elapsed_ms": 52.521,
+    "expected_facts": 6,
+    "failed_pulls": 0,
+    "fault_profile": "clean",
+    "fixture": "public-pair",
+    "gross_mass": 15,
+    "logical_restarts": 0,
+    "maximum_frame_bytes": 1109,
+    "maximum_page_facts": 6,
+    "new_fact_insertions": 24,
+    "partial_responses": 0,
+    "pull_attempts": 20,
+    "received_fact_occurrences": 70,
+    "request_drops": 0,
+    "response_drops": 0,
+    "rounds": 1,
+    "stopped_endpoint_attempts": 0,
+    "successful_pulls": 20
+  },
+  "source_inputs": 2,
+  "unit_mass": 15
+}

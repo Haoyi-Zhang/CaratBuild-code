@@ -39,6 +39,10 @@ def _decode_replay_facts(count: object, blob: object) -> tuple[str, ...]:
         raise ValueError("malformed projection replay index") from exc
     if inflater.unconsumed_tail or len(raw) > MAX_REPLAY_INDEX_BYTES:
         raise ValueError("projection replay index exceeds bound")
+    # Fact text can be complete before the native stream's checksum trailer.
+    # A persisted replay field must contain exactly one complete zlib stream.
+    if not inflater.eof or inflater.unused_data:
+        raise ValueError("malformed projection replay index stream boundary")
     if not raw:
         texts: tuple[str, ...] = ()
     else:

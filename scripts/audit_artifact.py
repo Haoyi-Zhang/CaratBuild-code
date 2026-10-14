@@ -37,9 +37,9 @@ def main() -> int:
     complete = load_json(SUMMARY / "complete_overview.json")
     tests = load_json(SUMMARY / "unit_tests.json")
     validate_current_unit_tests(tests)
-    if not complete.get("documented_commands_completed") or not complete.get("scientific_completion"):
-        raise AssertionError("the result collector did not close the bounded scientific scope")
-    if complete.get("venue_submission_ready") is not False:
+    if complete.get("semantic_checks_passed") is not True:
+        raise AssertionError("the result collector did not pass the bounded semantic checks")
+    if complete.get("venue_submission_ready", False) is not False:
         raise AssertionError("the internal package must not claim external submission readiness")
 
     with (ROOT / "claim_evidence_ledger.csv").open(newline="", encoding="utf-8") as handle:

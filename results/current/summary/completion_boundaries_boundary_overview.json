@@ -1,0 +1,26 @@
+{
+  "ablation_conditions": 6,
+  "ablation_counterexamples": 6,
+  "byte_identical_observation_mass": 10,
+  "byzantine_omission_worlds": 2,
+  "certificate_support_facts": 10,
+  "fixed_length_information_lower_bound_bits": 5,
+  "hidden_fact_mass": 5,
+  "identity_indistinguishability_worlds": 2,
+  "identity_oracle_masses": [
+    5,
+    10
+  ],
+  "measurement": {
+    "cpu_seconds": 0.010338,
+    "elapsed_seconds": 0.010609,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 26.953,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "origin_completion_vectors_at_five_origins": 32,
+  "payload_observations_identical": true,
+  "scope": "support-irredundance for this interval representation and an observer-only Byzantine omission impossibility; not universal encoding optimality",
+  "single_support_removals_checked": 10,
+  "single_support_removals_refused": 10
+}

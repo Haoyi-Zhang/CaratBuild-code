@@ -1,0 +1,18 @@
+{
+  "acknowledged_fact_occurrences": 46,
+  "acknowledged_sets_preserved": true,
+  "converged_nodes": 5,
+  "fault_scope": "one whole process killed after acknowledged ingress; filesystem power loss not tested",
+  "killed_process_exit_code": -9,
+  "measurement": {
+    "cpu_seconds": 0.655677,
+    "elapsed_seconds": 0.627603,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 27.316,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "nodes": 5,
+  "reconciliation_rounds": 3,
+  "runs": 1,
+  "union_facts": 46
+}

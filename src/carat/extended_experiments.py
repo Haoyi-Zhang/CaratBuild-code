@@ -849,6 +849,41 @@ async def _forward_remote_pages(sender_port: int, receiver_port: int) -> dict[st
     raise AssertionError("independent endpoint page sweep exceeded its bound")
 
 
+def verify_export_package(values: list[str], batch: str, manifest: dict[str, Any]) -> None:
+    """Bind the export manifest to the returned canonical facts and target batch."""
+    required = {"batch", "total_facts", "total_canonical_bytes", "target_data_facts",
+                "target_seals", "predecessor_seals", "seal_ids"}
+    if type(manifest) is not dict or set(manifest) != required or manifest["batch"] != batch:
+        raise AssertionError("raw export manifest identifies a different batch or schema")
+    if any(type(manifest[key]) is not int or manifest[key] < 0 for key in
+           required - {"batch", "seal_ids"}):
+        raise AssertionError("raw export manifest has invalid counts")
+    if type(manifest["seal_ids"]) is not list or any(type(s) is not str for s in manifest["seal_ids"]):
+        raise AssertionError("raw export manifest has invalid seal identifiers")
+    if any(type(text) is not str for text in values) or len(values) != len(set(values)):
+        raise AssertionError("raw export facts are malformed or duplicated")
+    facts = []
+    for text in values:
+        fact = parse_text(text)
+        if canonical_text(fact) != text:
+            raise AssertionError("raw export contains a noncanonical fact")
+        facts.append(fact)
+    target_data = [fact for fact in facts if fact["batch"] == batch and fact["kind"] != "seal"]
+    target_seals = [fact for fact in facts if fact["batch"] == batch and fact["kind"] == "seal"]
+    predecessors = [fact for fact in facts if fact["batch"] != batch and fact["kind"] == "seal"]
+    if len(target_data) + len(target_seals) + len(predecessors) != len(facts):
+        raise AssertionError("raw export contains foreign-batch data")
+    if (manifest["total_facts"] != len(values)
+            or manifest["total_canonical_bytes"] != sum(len(text.encode("utf-8")) for text in values)
+            or manifest["target_data_facts"] != len(target_data)
+            or manifest["target_seals"] != len(target_seals)
+            or manifest["predecessor_seals"] != len(predecessors)
+            or manifest["seal_ids"] != sorted(fact["seal"] for fact in target_seals)):
+        raise AssertionError("raw export manifest differs from returned facts")
+    if not check_sealed(values, batch, NODE_NAMES).accepted:
+        raise AssertionError("raw export does not reconstruct the sealed batch")
+
+
 async def _export_complete(port: int, batch: str) -> list[str]:
     """Collect and verify one bounded immutable raw export."""
 
@@ -876,12 +911,7 @@ async def _export_complete(port: int, batch: str) -> list[str]:
     else:
         raise AssertionError("raw export exceeded its page bound")
     assert manifest is not None
-    if len(values) != manifest["total_facts"]:
-        raise AssertionError("raw export fact count disagrees with its manifest")
-    if sum(len(text.encode("utf-8")) for text in values) != manifest["total_canonical_bytes"]:
-        raise AssertionError("raw export byte total disagrees with its manifest")
-    if not check_sealed(values, batch, NODE_NAMES).accepted:
-        raise AssertionError("raw export does not reconstruct the sealed batch")
+    verify_export_package(values, batch, manifest)
     return values
 
 

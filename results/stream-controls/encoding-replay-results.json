@@ -1,0 +1,182 @@
+{
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.28000-SP0"
+  },
+  "rows": [
+    {
+      "batches": 1,
+      "facts": 67,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 11141,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 1411000
+        },
+        "whole_zlib": {
+          "bytes": 1085,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 1398300
+        },
+        "batch_zlib_json": {
+          "bytes": 1374,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 1496600
+        },
+        "projection": {
+          "bytes": 3010,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 5861700
+        }
+      }
+    },
+    {
+      "batches": 5,
+      "facts": 220,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 36469,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 4294800
+        },
+        "whole_zlib": {
+          "bytes": 2941,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 4355400
+        },
+        "batch_zlib_json": {
+          "bytes": 5206,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 4670600
+        },
+        "projection": {
+          "bytes": 10750,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 18927600
+        }
+      }
+    },
+    {
+      "batches": 10,
+      "facts": 429,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 71150,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 8295000
+        },
+        "whole_zlib": {
+          "bytes": 5538,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 8789000
+        },
+        "batch_zlib_json": {
+          "bytes": 10340,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 9367400
+        },
+        "projection": {
+          "bytes": 21154,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 37792300
+        }
+      }
+    },
+    {
+      "batches": 20,
+      "facts": 802,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 133161,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 16069500
+        },
+        "whole_zlib": {
+          "bytes": 10166,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 16541900
+        },
+        "batch_zlib_json": {
+          "bytes": 19972,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 17511100
+        },
+        "projection": {
+          "bytes": 40295,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 70277500
+        }
+      }
+    },
+    {
+      "batches": 40,
+      "facts": 1515,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 251775,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 29900700
+        },
+        "whole_zlib": {
+          "bytes": 19014,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 30452700
+        },
+        "batch_zlib_json": {
+          "bytes": 38743,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 32300800
+        },
+        "projection": {
+          "bytes": 77353,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 132301300
+        }
+      }
+    },
+    {
+      "batches": 80,
+      "facts": 3025,
+      "repetitions": 5,
+      "compression_level": 9,
+      "metric": "resident encoded payload; decode plus identical full accounting",
+      "representations": {
+        "raw_jsonl": {
+          "bytes": 503178,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 60429900
+        },
+        "whole_zlib": {
+          "bytes": 37593,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 61047000
+        },
+        "batch_zlib_json": {
+          "bytes": 77606,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 71243500
+        },
+        "projection": {
+          "bytes": 154644,
+          "roundtrip_equal": true,
+          "decode_and_account_median_ns": 266425900
+        }
+      }
+    }
+  ]
+}

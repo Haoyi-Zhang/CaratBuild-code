@@ -1,0 +1,6 @@
+variant,runs,detected,verified,witness_size_median,witness_size_max
+missing-transform-output,80,80,80,2.0,2
+conflicting-presentation,80,80,80,2.0,2
+unresolved-effect,80,80,80,2.0,2
+conflicting-event,80,80,80,2.0,2
+invalid-transform,80,80,80,3.0,3

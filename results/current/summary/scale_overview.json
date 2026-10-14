@@ -1,0 +1,15 @@
+{
+  "largest_checker_ms_median": 929.362,
+  "largest_decode_ms_median": 926.616,
+  "largest_facts": 20013,
+  "largest_state_bytes": 2972060,
+  "largest_units": 20000,
+  "measurement": {
+    "cpu_seconds": 12.307564,
+    "elapsed_seconds": 12.311099,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 76.004,
+    "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+  },
+  "peak_rss_kib": 77828
+}

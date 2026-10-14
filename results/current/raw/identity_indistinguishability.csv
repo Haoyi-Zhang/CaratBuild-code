@@ -1,0 +1,3 @@
+world,payload_observation,declared_units,oracle_mass,occurrence_count_mass,content_set_mass
+duplicate-presentation,same-bytes;same-bytes,u;u,5,10,5
+independent-identical-work,same-bytes;same-bytes,u1;u2,10,10,5

@@ -1,0 +1,2 @@
+fixture,fault_profile,expected_facts,rounds,converged_nodes,determined_nodes,checker_accepted_nodes,gross_mass,pull_attempts,successful_pulls,failed_pulls,stopped_endpoint_attempts,received_fact_occurrences,new_fact_insertions,application_frame_bytes,maximum_frame_bytes,maximum_page_facts,request_drops,response_drops,partial_responses,delayed_responses,logical_restarts,elapsed_ms
+mixed,clean,46,3,5,5,5,31,60,60,0,0,870,184,307220,20744,16,0,0,0,0,0,231.136

@@ -1,0 +1,38 @@
+{
+  "cases": 4,
+  "expected_admissions": 4,
+  "interpretation": "these accepted counterexamples delimit non-claims; they are not successful defenses",
+  "measurement": {
+    "cpu_seconds": 0.003962,
+    "elapsed_seconds": 0.004042,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 26.914,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "rows": [
+    {
+      "admitted": true,
+      "case": "relation-cycle",
+      "gross_mass": 5,
+      "meaning": "acyclic history is not an implemented constraint"
+    },
+    {
+      "admitted": true,
+      "case": "opaque-dependency",
+      "gross_mass": 5,
+      "meaning": "dependency is a label, not verified build causality"
+    },
+    {
+      "admitted": true,
+      "case": "new-mint-identity",
+      "gross_mass": 10,
+      "meaning": "distinct valid mints count separately"
+    },
+    {
+      "admitted": true,
+      "case": "trusted-summary-edit",
+      "gross_mass": 50,
+      "meaning": "coherently rewritten imported summary and replay index remain structurally trusted"
+    }
+  ]
+}

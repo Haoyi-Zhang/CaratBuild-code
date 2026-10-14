@@ -29,7 +29,7 @@ if test_functions<1: errors.append('no directly discoverable test functions')
 if network_bootstrap: errors.append('reproduction script performs network/bootstrap installation')
 if not (root/'LICENSE').exists() and not list(root.glob('LICENSE*')): errors.append('artifact license missing')
 out={'schema_version':1,'status':'PASS' if not errors else 'FAIL','errors':errors,'python_files':len(rows),'source_loc':source_loc,'test_loc':test_loc,'direct_test_functions':test_functions,'syntax_errors':syntax,'risky_dynamic_execution':risky,'unfinished_markers':todos,'network_or_install_commands_in_reproduce':network_bootstrap,'files':rows}
-(root/'results').mkdir(exist_ok=True)
-(root/'results'/'code_quality_audit.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+# Package checks still fail closed; generic LOC/planning reports are stdout
+# for the caller's private log, not scientific results persisted in the packet.
 print(json.dumps({k:out[k] for k in ['status','errors','python_files','source_loc','test_loc','direct_test_functions']},indent=2))
 if errors: raise SystemExit(1)

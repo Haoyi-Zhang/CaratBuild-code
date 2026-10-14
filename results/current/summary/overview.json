@@ -1,0 +1,90 @@
+{
+  "ambiguity": {
+    "detected": 400,
+    "maximum_witness_size": 3,
+    "measurement": {
+      "cpu_seconds": 1.674857,
+      "elapsed_seconds": 1.675141,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 18.527,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    },
+    "runs": 400,
+    "verified": 400
+  },
+  "compaction": {
+    "all_accounting_equal": true,
+    "largest_batches": 80,
+    "largest_facts": 3025,
+    "largest_reduction_fraction": 0.692665,
+    "measurement": {
+      "cpu_seconds": 2.686244,
+      "elapsed_seconds": 2.686912,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 28.238,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    }
+  },
+  "elapsed_seconds": 39.475,
+  "exhaustive": {
+    "delivery_cases": 960,
+    "delivery_failures": 0,
+    "gap_hole_counterexamples": 1,
+    "gap_hole_starved_facts": 6,
+    "measurement": {
+      "cpu_seconds": 2.093259,
+      "elapsed_seconds": 2.093841,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 18.41,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    },
+    "operation_failures": 0,
+    "operation_sequences": 39
+  },
+  "faults": {
+    "arrival_order_branch_divergent_runs": 141,
+    "checker_accepted": 160,
+    "converged": 160,
+    "determined": 160,
+    "maximum_mass_error": 0,
+    "measurement": {
+      "cpu_seconds": 11.983003,
+      "elapsed_seconds": 11.985054,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 19.02,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    },
+    "runs": 160
+  },
+  "manipulation": {
+    "fork_multi_output_runs": 96,
+    "maximum_carat_ratio": 1.0,
+    "maximum_copies": 16,
+    "maximum_count_ratio": 17.0,
+    "maximum_presentation_mass_ratio": 17.0,
+    "measurement": {
+      "cpu_seconds": 1.91371,
+      "elapsed_seconds": 1.916636,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 19.047,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    },
+    "runs": 720,
+    "squash_multi_input_runs": 120
+  },
+  "scale": {
+    "largest_checker_ms_median": 929.362,
+    "largest_decode_ms_median": 926.616,
+    "largest_facts": 20013,
+    "largest_state_bytes": 2972060,
+    "largest_units": 20000,
+    "measurement": {
+      "cpu_seconds": 12.307564,
+      "elapsed_seconds": 12.311099,
+      "inherited_cumulative_cpu_seconds": null,
+      "peak_worker_rss_mib": 76.004,
+      "rss_scope": "single worker high-water mark including driver; not live-state allocation"
+    },
+    "peak_rss_kib": 77828
+  }
+}

@@ -1,8 +1,13 @@
 """Small in-process raw-export regressions; no listener, disk or worker launch."""
+import asyncio
+import json
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 from carat.closure import sealed_query
+import carat.extended_experiments as extended_experiments
+from carat.extended_experiments import verify_export_package
 from carat.facts import canonical_text, mint, parse_text, seal
 from carat.independent_check import check_sealed
 from carat.multiprocess_service import IndependentNode, _raw_export_facts
@@ -76,6 +81,39 @@ class ExportContextTests(unittest.TestCase):
         self.assertTrue(checked.accepted)
         self.assertEqual((decoded.unique_units, decoded.gross_mass), (5, 15))
         self.assertEqual((checked.unique_units, checked.gross_mass), (5, 15))
+        verify_export_package(values, batch, manifest)
+        for field, bad in (("batch", "batch-1"), ("target_data_facts", 4),
+                           ("target_seals", 4), ("predecessor_seals", 9),
+                           ("seal_ids", ["wrong-seal"])):
+            changed = dict(manifest)
+            changed[field] = bad
+            with self.subTest(field=field), self.assertRaises(AssertionError):
+                verify_export_package(values, batch, changed)
+        noncanonical = list(values)
+        noncanonical[0] = json.dumps(parse_text(noncanonical[0]), indent=1)
+        changed = dict(manifest)
+        changed["total_canonical_bytes"] = sum(len(text.encode("utf-8")) for text in noncanonical)
+        with self.assertRaisesRegex(AssertionError, "noncanonical fact"):
+            verify_export_package(noncanonical, batch, changed)
+
+        # Exercise the actual collector through multiple owned pages as well
+        # as the pure package validator, without a listener or worker process.
+        async def local_rpc(_port, request):
+            return node.dispatch(request), 0
+
+        with patch.object(extended_experiments, "rpc", side_effect=local_rpc), \
+                patch.object(extended_experiments, "PAGE_LIMIT", 3):
+            self.assertEqual(asyncio.run(extended_experiments._export_complete(0, batch)), values)
+
+        async def inconsistent_rpc(_port, request):
+            page = node.dispatch(request)
+            page["manifest"]["seal_ids"] = ["wrong-seal"]
+            return page, 0
+
+        with patch.object(extended_experiments, "rpc", side_effect=inconsistent_rpc), \
+                patch.object(extended_experiments, "PAGE_LIMIT", 3):
+            with self.assertRaisesRegex(AssertionError, "manifest differs from returned facts"):
+                asyncio.run(extended_experiments._export_complete(0, batch))
 
     def test_missing_toy_predecessor_is_not_silently_omitted(self):
         raw = fixture()

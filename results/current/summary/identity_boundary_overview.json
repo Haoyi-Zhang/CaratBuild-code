@@ -1,0 +1,14 @@
+{
+  "carat_integrity_refusals": 400,
+  "interpretation": "Unique-mint counting supplies the same mass on this corpus; the decoder adds integrity decisions, not a stronger mass estimator.",
+  "invalid_cases": 400,
+  "measurement": {
+    "cpu_seconds": 2.267892,
+    "elapsed_seconds": 2.268446,
+    "inherited_cumulative_cpu_seconds": null,
+    "peak_worker_rss_mib": 27.117,
+    "rss_scope": "largest reported worker high-water mark, not concurrent aggregate RSS"
+  },
+  "mint_only_exact_mass_cases": 1120,
+  "valid_cases": 720
+}

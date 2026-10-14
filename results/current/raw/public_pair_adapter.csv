@@ -1,0 +1,10 @@
+case,expected_admitted,observed_admitted
+packaged-pytest-pair,True,True
+target-coordinate-shift,True,True
+synchronized-two-sided-payload-change,True,True
+context-coordinate-and-metadata-change,True,True
+one-sided-payload-change,False,False
+one-sided-path-change,False,False
+truncated-hunk,False,False
+binary-input,False,False
+malformed-metadata,False,False
