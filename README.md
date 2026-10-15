@@ -16,9 +16,9 @@ The decoder builds effect unit-membership sets lazily once per uniquely defined 
 PYTHONPATH=src python3 -B -m unittest discover -s tests -p test_effect_membership.py -v
 ```
 
-Full discovery includes six effect-membership cases, three raw-export context cases, two lossless-storage comparison cases, three complete-stream controls and five same-contract local lifecycle controls. The current collector requires exactly 91 tests, including at least eight module-level cases, with zero failures, errors or skips. The retained Linux receipt covers its 72-test source surface; it is not an execution of the expanded suite.
+Full discovery includes six effect-membership cases, three raw-export context cases, two lossless-storage comparison cases, three complete-stream controls, five same-contract local lifecycle controls and four lifecycle-driver controls. The current collector requires exactly 95 tests, including at least eight module-level cases, with zero failures, errors or skips. The retained Linux receipt covers its 72-test source surface; it is not an execution of the expanded suite.
 
-The gate's receipt/count regressions are kept outside `tests/` so they do not change the 91-case campaign surface. They count discovery without running it and require inclusion of all three export cases:
+The gate's receipt/count regressions are kept outside `tests/` so they do not change the 95-case campaign surface. They count discovery without running it and require inclusion of all three export cases:
 
 ```bash
 python3 -B scripts/test_unit_test_contract.py
@@ -61,5 +61,12 @@ claim is made from the small SQLite container comparison. See
 `docs/storage-lifecycle.md` for costs, native/shared-code distinctions and
 unmeasured scope. `results/stream-controls/` retains the complete-stream red/green
 and selected-regression receipts; historical measurements are unchanged.
+
+The lifecycle driver checks initial and later queries, replay/admission counts,
+full reconstruction and paired outputs with explicit exceptions in both normal
+and optimized Python. Four deterministic driver tests include rejecting a
+disagreement before publishing samples or a success summary. The retained
+ten timing samples bind their original driver; this guard repair does not
+replace those observations or claim a new performance experiment.
 
 The evaluated model is a finite fixed faithful-origin roster, crash-stop endpoints, bounded local resources, and eventual delivery after the final failure. Projection retains an exact bounded replay index so old facts are idempotent, visible conflicts remain rejectable, and disjoint later batches can continue. The artifact does not claim Byzantine security, dynamic membership, WAN performance, cryptographic provenance, or production deployment.

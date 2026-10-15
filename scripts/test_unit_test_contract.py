@@ -1,6 +1,6 @@
 """Pure receipt/count regressions; do not run the scientific campaigns.
 
-Kept outside tests/ so these gate checks do not change its 91-case campaign
+Kept outside tests/ so these gate checks do not change its 95-case campaign
 surface. Discovery below only counts existing cases; it does not run them.
 """
 from __future__ import annotations
@@ -54,7 +54,7 @@ class UnitTestContractTests(unittest.TestCase):
         self.assertTrue(EXPORT_CASES.issubset({case.id() for case in cases}))
 
     def test_historical_and_partial_counts_are_not_current_success(self):
-        for count in (66, 72, 78, 80, 82, 83, 90, True, 91.0):
+        for count in (66, 72, 78, 80, 82, 83, 90, 91, 94, True, 95.0):
             with self.subTest(count=count):
                 wrong = dict(self.record, tests_run=count)
                 with self.assertRaises(AssertionError):

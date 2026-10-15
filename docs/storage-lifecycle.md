@@ -30,8 +30,18 @@ PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python -B -m unittest discover \
 Both paths must be fresh and disjoint. The optional `CARAT_WORK_ROOT` environment
 variable places unittest temporary directories inside the caller's assigned
 workspace. Do not overwrite retained measurement directories. The full Linux
-driver discovers these eight new methods through its existing test stage; its
-91-test current gate is not a receipt that all 91 have run on this Windows host.
+driver discovers these eight storage/stream methods and four lifecycle-driver
+methods through its existing test stage. Its current gate requires95 actual
+methods, zero failures/errors/skips and at least eight module-level cases.
+The complete service suite requires POSIX directory synchronization; a Windows
+directory-open failure is not a successful complete execution. The driver
+regressions are portable and can be selected with `-p test_lifecycle_driver.py`.
+
+Scientific query, replay, admission, reconstruction and pair-equality checks
+use explicit exceptions, including when Python optimization is enabled.
+The four driver regressions exercise healthy paths and refuse inconsistent
+outputs before result publication. Historical samples retain their original
+source bindings; driver correctness tests do not replace the retained timings.
 
 ## Literal costs and null interpretation
 

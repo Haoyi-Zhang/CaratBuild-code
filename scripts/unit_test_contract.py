@@ -1,9 +1,9 @@
 """Current-run test accounting, separate from retained campaign receipts."""
 from __future__ import annotations
 
-# 83 prior current cases + 3 replay-stream + 5 local storage-lifecycle cases.
+# 83 prior cases + 3 replay-stream + 5 storage + 4 lifecycle-driver cases.
 # This is a current gate, not a relabeling of any historical execution.
-EXPECTED_TESTS = 91
+EXPECTED_TESTS = 95
 MIN_MODULE_LEVEL_TESTS = 8
 
 

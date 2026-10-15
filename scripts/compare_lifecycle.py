@@ -25,6 +25,17 @@ def write_new(path, value):
         handle.write(json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + '\n')
 
 
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def validate_pair(pair):
+    require(len(pair) == 2, 'lifecycle comparison requires both storage paths')
+    for field in ('initial_queries', 'later_queries', 'recovery'):
+        require(pair[0][field] == pair[1][field], 'storage paths disagree on ' + field)
+
+
 def trial(mode, work, input_path, queries):
     work.mkdir(exist_ok=False)
     phases = {}
@@ -64,22 +75,22 @@ def trial(mode, work, input_path, queries):
         initial_answers = phase('queries_initial', lambda: [store.query() for _ in range(queries)])
         expected_initial = {'determined': True, 'unique_units': 1, 'gross_mass': 5,
                             'presentations': 2, 'effects': 1, 'passing_effects': 1, 'failing_effects': 0}
-        assert all(answer['accounting'] == expected_initial and answer['progress'][first]['final']
-                   for answer in initial_answers)
+        require(all(answer['accounting'] == expected_initial and answer['progress'][first]['final']
+                    for answer in initial_answers), 'initial accounting or finality differs')
         replay_added = phase('replay', lambda: store.admit(initial))
-        assert replay_added == 0
+        require(replay_added == 0, 'exact replay changed stored facts')
         appended = phase('append_commit', lambda: store.admit(later))
-        assert appended == 10
+        require(appended == 10, 'later admission did not add the declared ten facts')
         later_answers = phase('queries_later', lambda: [store.query() for _ in range(queries)])
-        assert all(answer['accounting']['gross_mass'] == 10 and answer['accounting']['unique_units'] == 6
-                   and answer['progress'][first]['final'] and answer['progress'][second]['final']
-                   for answer in later_answers)
+        require(all(answer['accounting']['gross_mass'] == 10 and answer['accounting']['unique_units'] == 6
+                    and answer['progress'][first]['final'] and answer['progress'][second]['final']
+                    for answer in later_answers), 'later accounting or finality differs')
         store = phase('close_reopen_later', reopen)
         def final_verify():
             recovered = store.reconstruct()
-            assert recovered == canonical(initial + later)
+            require(recovered == canonical(initial + later), 'reconstruction differs from complete input')
             answer = store.query()
-            assert answer == later_answers[0]
+            require(answer == later_answers[0], 'reopened query differs from committed query')
             return {'canonical_facts': list(recovered), 'query': answer}
         recovery = phase('reconstruct_and_query_verify', final_verify)
         native_pragmas = None
@@ -132,9 +143,7 @@ def main():
             row.update(repeat=repeat, order=list(order))
             samples.append(row)
             pair.append(row)
-        assert pair[0]['initial_queries'] == pair[1]['initial_queries']
-        assert pair[0]['later_queries'] == pair[1]['later_queries']
-        assert pair[0]['recovery'] == pair[1]['recovery']
+        validate_pair(pair)
     sources = ('src/carat/storage_lifecycle.py', 'src/carat/compaction.py', 'src/carat/closure.py',
                'src/carat/facts.py', 'src/carat/decode.py', 'src/carat/independent_check.py',
                'src/carat/retention.py', 'tests/test_retention.py', 'scripts/compare_lifecycle.py')
