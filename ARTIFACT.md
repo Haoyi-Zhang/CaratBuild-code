@@ -6,8 +6,13 @@ This artifact evaluates accounting-window finality and evidence retention for a 
 
 ## One-command reproduction
 
+From this artifact directory, use Linux, Bash and Python 3.12 as described in
+`README.md` and `DEPENDENCIES.md`. No third-party Python packages or network
+access are needed. Use a disposable copy because generated results and audits
+are replaced in place.
+
 ```sh
-./scripts/reproduce.sh
+bash scripts/reproduce.sh
 ```
 
 The command is offline, fail-closed, and stage-isolated. It runs the complete unittest surface (including module-level tests), six original campaigns, twelve boundary campaigns, the independent finite boundary checker, the collectors, public-input verification, environment/dependency capture, and final package audits. Any failed stage produces a nonzero status. Performance fields are descriptive and machine-dependent; semantic acceptance, sets, masses, safety decisions, and exact counts are the reproducibility target.

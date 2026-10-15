@@ -2,10 +2,25 @@
 
 This directory is the executable artifact for *The Last-Fact Problem: Identity, Completion, and Evidence Retention in Federated Build Accounting*. It contains the implementation, differential checkers, deterministic tests, lawful public inputs, experiment drivers, and retained results.
 
+## Environment and reproduction
+
+Use Linux with Bash and Python 3.12 (the configured CI environment is Ubuntu
+24.04/Python 3.12). Only the Python standard library is needed; there is no
+package-install step or network fetch. Complete reproduction uses POSIX
+`fcntl`, `resource`, signals and file/directory synchronization, so native
+Windows is not a supported complete-reproduction environment. The portable
+subsets below can be run separately.
+
+Run from this artifact directory, using a disposable copy: the complete command
+rewrites `results/raw/`, `results/summary/` and generated audit/environment
+records in `results/`. Public input bytes under `external_inputs/` and `inputs/`
+are retained in the package and checked by `scripts/verify_public_inputs.py`.
+Set `CARAT_PYTHON` to a Python 3.12 executable if `python` is not that interpreter.
+
 Run the complete offline reproduction:
 
 ```bash
-./scripts/reproduce.sh
+bash scripts/reproduce.sh
 ```
 
 The run executes the full unittest surface, all eighteen experiment campaigns, the finite boundary checker, collectors, provenance checks, environment capture, and fail-closed package audits. A nonzero exit status is a failed reproduction. The retained Linux execution in `results/current/` passes 72 tests with no skips, including eight module-level cases. It records 48.466 post-import stage CPU seconds and 76.004 MiB largest-worker RSS. Its twelve owned executable-DAG task records, 46-fact recovery union, and 205-fact raw export satisfy their checks. Historical failed checkpoint trials remain under `results/reproduction_failures/`; they are not overwritten by a later successful run.

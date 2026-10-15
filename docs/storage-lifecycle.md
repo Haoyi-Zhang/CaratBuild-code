@@ -31,7 +31,7 @@ Both paths must be fresh and disjoint. The optional `CARAT_WORK_ROOT` environmen
 variable places unittest temporary directories inside the caller's assigned
 workspace. Do not overwrite retained measurement directories. The full Linux
 driver discovers these eight storage/stream methods and four lifecycle-driver
-methods through its existing test stage. Its current gate requires95 actual
+methods through its existing test stage. Its current gate requires 95 actual
 methods, zero failures/errors/skips and at least eight module-level cases.
 The complete service suite requires POSIX directory synchronization; a Windows
 directory-open failure is not a successful complete execution. The driver

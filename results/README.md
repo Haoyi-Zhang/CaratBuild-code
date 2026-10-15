@@ -47,13 +47,13 @@ The following semantic results remain claim-critical and are asserted by the fin
 - three holders at `f=2`, all 16 crash sets, two holder kills, and a 205-fact paged survivor export;
 - exact projected raw replay is idempotent, while an altered fact at the same deleted coordinate is rejected; projected restart preserves mass 600;
 - a mixed page containing old replay and a valid later batch advances and admits the later batch;
-- a 32-fact JSON page larger than 1 MiB is split by encoded bytes; bounded export verifies stable manifests, returned offsets, an advancing cursor, count, canonical bytes, and sealed completeness, but does not separately bind manifest batch/seal-ID fields;
+- a 32-fact JSON page larger than 1 MiB is split by encoded bytes; the retained campaign verifies stable manifests, returned offsets, an advancing cursor, count, canonical bytes, and sealed completeness. The current verifier additionally binds manifest batch, target seal IDs and target/predecessor counts to canonical returned facts; `tests/test_export_context.py` checks this guard without relabeling the historical campaign;
 - all 324 complete-page cases converge; retained coordinate-gap cases do not;
 - twelve service campaigns reach exact union, with six common acceptances and six common refusals;
 - one process kill preserves 46 acknowledged fact occurrences and reaches the 46-fact union;
 - the executable graph records twelve outcomes from nine subprocesses: seven pass, two fail, three skip.
 
-Original projection byte counts and campaign timing/resource measurements belong to their retained runs and must be read from `raw/compaction.csv`, `raw/multiprocess_retention_summary.json`, `raw/scale.csv`, and `summary/complete_overview.json`. The older clean run covered 66 tests (eight module-level), and the retained Linux run covered 72. The expanded current gate is 91; the selected portable receipts do not establish a complete 91-test execution. No new measurement replaces those historical host records.
+Original projection byte counts and campaign timing/resource measurements belong to their retained runs and must be read from `raw/compaction.csv`, `raw/multiprocess_retention_summary.json`, `raw/scale.csv`, and `summary/complete_overview.json`. The older clean run covered 66 tests (eight module-level), and the retained Linux run covered 72. The expanded current gate is 95, as defined by `scripts/unit_test_contract.py`; the selected portable receipts do not establish a complete 95-test execution. No new measurement replaces those historical host records.
 
 ## Resource scope
 
